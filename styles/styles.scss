@@ -1,0 +1,30 @@
+* {
+  font-family: "neototem";
+}
+
+@import "abstract/variables";
+$red: #c90a17;
+$white: #949494;
+$black: #030303;
+
+@import "abstract/mixins";
+@import "abstract/keyframes";
+
+@import "base/global";
+@import "base/typography";
+
+@import "components/audio-player";
+@import "components/button";
+@import "components/experience";
+@import "components/header";
+@import "components/footer";
+@import "components/layout";
+@import "components/loading";
+@import "components/home";
+@import "components/about";
+@import "components/contact";
+@import "components/pricing";
+@import "components/blog";
+@import "components/single_blog";
+
+@import "components/terminal";

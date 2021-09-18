@@ -1,0 +1,100 @@
+.footerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 12rem auto 0rem;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 20rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 20rem;
+  }
+
+  .footerinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 92%;
+    position: relative;
+    box-shadow: 0 5px 30px 1px;
+    padding: 1rem 1rem 0rem;
+  }
+
+  .footerlogo {
+    margin-top: 1rem;
+  }
+
+  .logoMenuDiv {
+    border-top: 1px groove $red;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .menubar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 450px) {
+      visibility: hidden;
+    }
+  }
+
+  .menu-item {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-item:active {
+    background: $red;
+  }
+  .menu-item:hover {
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+    box-shadow: 0 5px 30px 1px $red;
+    border-radius: 20px;
+  }
+
+  .contactDiv {
+    border: $white solid 1px;
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    background-color: $red;
+    margin-left: 1rem;
+  }
+  .contactDiv:hover {
+    border: white solid 1px;
+    background: $black !important;
+  }
+}
+
+.earth-div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .earth-img:hover {
+    transform: translate(200px, 0);
+    transition: all ease-in-out 1s;
+  }
+
+  .earth-text {
+    position: absolute;
+    font-size: 2rem;
+    left: -15rem;
+    top: 8rem;
+    text-align: center;
+    border: 1px solid $red;
+    padding: 1rem 1rem;
+  }
+}

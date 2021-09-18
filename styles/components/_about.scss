@@ -1,0 +1,207 @@
+.bannerMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 1rem auto 0rem;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 2rem;
+  }
+
+  .bannerInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbbcfa234-0ce3-11e8-9ed2-93cf9d74a2fe.jpg?crop=4219%2C2813%2C0%2C0");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: 0 5px 30px 1px;
+    width: 92%;
+    position: relative;
+    box-shadow: 0 5px 30px 1px;
+    padding: 1rem 1rem 0rem;
+    height: 600px;
+
+    .bannerTextDiv {
+      margin-top: 25rem;
+      margin-left: 30rem;
+      transform: rotate(1deg);
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin: 0;
+        transform: rotate(0deg);
+      }
+
+      @media screen and (max-width: 450px) {
+        margin: 0;
+        transform: rotate(0deg);
+      }
+    }
+    .bannerText {
+      font-size: 5rem;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        font-size: 4rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+.aboutMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 6rem auto 0rem;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 1rem;
+  }
+
+  .aboutInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 30px 1px;
+    width: 92%;
+    box-shadow: 0 5px 30px 1px;
+    padding: 1rem 1rem 0rem;
+    @media screen and (min-width: 600px) and (max-width: 770px) {
+      margin-top: 2rem;
+      padding: 0 0 1rem;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 450px) {
+      margin-top: 1vw !important;
+      padding-bottom: 1rem;
+      width: 100%;
+    }
+
+    .aboutDesp {
+      text-align: center;
+      margin: 3rem 4rem 0;
+      font-size: 2rem;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        font-size: 1.2rem;
+        margin: 3rem 0.2rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 1.2rem;
+        margin: 3rem 0.2rem;
+      }
+    }
+
+    .focusMain {
+      padding: 4rem 4rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin-top: 2rem;
+        padding: 0 0 1rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        margin-top: 1vw !important;
+        padding: 0 0 1rem;
+      }
+    }
+
+    .focusItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin-top: 2rem;
+        padding: 0 0 1rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        margin-top: 4vw !important;
+        padding: 0 0 1rem;
+      }
+    }
+
+    .focusImg {
+      border-radius: 300px;
+    }
+    .focusText {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.2rem;
+      color: $red;
+      width: 70%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .topicDiv {
+      margin: 2rem;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px groove $white;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin: 2rem 0 0;
+        padding: 0 1rem 1rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        margin: 10vw 0 0 !important;
+        padding: 0 1rem 1rem;
+      }
+      .topicImage {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+      }
+
+      .topicText {
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+
+        @media screen and (min-width: 600px) and (max-width: 770px) {
+          font-size: 1rem;
+          text-align: center;
+        }
+
+        @media screen and (max-width: 450px) {
+          font-size: 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.footerDiv {
+}

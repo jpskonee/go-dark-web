@@ -1,0 +1,201 @@
+.blogMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 1rem auto 0rem;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 2rem;
+  }
+
+  .blogInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.theindianwire.com/wp-content/uploads/2020/06/ethical-hacking.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: 0 5px 30px 1px;
+    width: 92%;
+    position: relative;
+    padding: 1rem 1rem 0rem;
+    height: 600px;
+
+    .blogTextDiv {
+      margin-top: 6rem;
+      margin-left: 0rem;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 450px) {
+        margin: 0;
+      }
+    }
+    .blogText {
+      font-size: 5rem;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        font-size: 4rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+.postMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 6rem auto 6rem;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 2rem;
+  }
+
+  .postInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 30px 1px;
+    width: 92%;
+    position: relative;
+    padding: 3rem 1rem 3rem;
+
+    .postDiv {
+      min-height: 27rem;
+      margin: 1.5rem auto;
+      border: $white 1px solid;
+      padding: 0.6rem;
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+      }
+
+      @media screen and (max-width: 450px) {
+      }
+
+      .postImage {
+        max-width: "100%";
+        max-height: 17rem;
+        @media screen and (min-width: 600px) and (max-width: 770px) {
+        }
+
+        @media screen and (max-width: 450px) {
+        }
+      }
+      .postTextDiv {
+        margin-top: 0.5rem;
+        @media screen and (min-width: 600px) and (max-width: 770px) {
+        }
+
+        @media screen and (max-width: 450px) {
+        }
+
+        .postCatDiv {
+          background: rgb(92, 89, 89);
+          width: fit-content;
+          margin-bottom: 1rem;
+        }
+        .postCat {
+          font-size: 0.6rem;
+          padding: 0.3rem;
+          font-family: "Times New Roman", Times, serif;
+          font-weight: bolder;
+          margin: 0.5rem 0;
+          @media screen and (min-width: 600px) and (max-width: 770px) {
+          }
+
+          @media screen and (max-width: 450px) {
+          }
+        }
+
+        .postDate {
+          font-style: italic;
+          font-size: 0.6rem;
+          font-family: "Times New Roman", Times, serif;
+          @media screen and (min-width: 600px) and (max-width: 770px) {
+          }
+
+          @media screen and (max-width: 450px) {
+          }
+        }
+
+        .postTitle {
+          font-size: 1.4rem;
+          text-align: center;
+          @media screen and (min-width: 600px) and (max-width: 770px) {
+          }
+
+          @media screen and (max-width: 450px) {
+          }
+        }
+
+        .postMsg {
+          font-size: 0.8rem;
+          line-height: 2rem;
+          font-family: "Times New Roman", Times, serif;
+          margin: 0.5rem 0;
+          @media screen and (min-width: 600px) and (max-width: 770px) {
+          }
+
+          @media screen and (max-width: 450px) {
+          }
+        }
+
+        .postReadMoreBtn {
+          background: $red;
+          padding: 0.3rem;
+          font-family: "Times New Roman", Times, serif;
+          margin-left: 1.5rem;
+          @media screen and (min-width: 600px) and (max-width: 770px) {
+          }
+
+          @media screen and (max-width: 450px) {
+          }
+        }
+
+        #postAuthorDiv {
+          display: flex;
+          justify-content: right;
+          align-items: center;
+        }
+        .postAuthor {
+          color: "gray";
+          font-size: 0.8rem;
+          font-family: "Times New Roman", Times, serif;
+          text-align: right;
+          background: rgb(92, 89, 89);
+          padding: 0.3rem;
+          width: fit-content;
+          @media screen and (min-width: 600px) and (max-width: 770px) {
+          }
+
+          @media screen and (max-width: 450px) {
+          }
+        }
+      }
+    }
+  }
+}

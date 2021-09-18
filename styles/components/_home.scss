@@ -1,0 +1,486 @@
+$red: #c90a17;
+$white: #949494;
+$black: #030303;
+
+.home {
+  .title {
+    color: white;
+    font-weight: 900;
+    font-size: 6rem;
+    letter-spacing: 1vw;
+    text-align: left;
+    font-family: Neototem;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+    white-space: nowrap;
+
+    @media screen and (min-width: 600px) and (max-width: 770px) {
+      font-size: 15vw;
+      text-align: center;
+      padding-top: 8vw;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 450px) {
+      font-size: 16vw;
+      padding-top: 12vw;
+      margin: 0 auto;
+    }
+  }
+
+  .headerMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    margin: 0.5rem 0 0 2rem;
+    position: relative;
+
+    @media screen and (min-width: 600px) and (max-width: 770px) {
+      margin: 0.1rem 0;
+    }
+
+    @media screen and (max-width: 450px) {
+      margin: 0rem 0;
+    }
+  }
+
+  .headerinner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    margin-top: 1rem;
+    position: relative;
+    box-shadow: 0 5px 30px 1px;
+    padding: 1rem 3rem;
+
+    @media screen and (max-width: 600px) {
+      padding: 1rem 0.5rem;
+    }
+  }
+
+  .headerText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .headerdesp {
+      font-size: 1.3rem;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      line-height: 1.5rem;
+      margin: 2rem 0 3.5rem;
+      width: 80%;
+
+      @media screen and (max-width: 770px) {
+        text-align: center;
+        margin: 2rem 0 3rem;
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+
+    .headerBtn {
+      border: solid 2px $white;
+      padding: 1rem 3rem;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      font-weight: bolder;
+      width: 15rem;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 3rem;
+      z-index: 10;
+      background-color: $red !important;
+      border-radius: 5px;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        width: 12rem;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        margin: 0.5rem auto;
+        position: absolute;
+        bottom: 2rem;
+        left: 35vw;
+      }
+
+      @media screen and (max-width: 430px) {
+        position: absolute;
+        width: 30vw;
+        padding: 0.4rem 0.4rem;
+        bottom: -2vw;
+        left: 32vw;
+      }
+    }
+    .headerBtn:hover {
+      border: solid 2px white;
+      background-color: #030303 !important;
+    }
+  }
+
+  .headerImage {
+    margin: 0;
+    padding: 0;
+    animation-name: wheel;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 2s;
+
+    @media screen and (max-width: 770px) {
+      margin: 2rem auto;
+    }
+  }
+
+  @keyframes wheel {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .headerHacker {
+    position: absolute;
+    bottom: -7rem;
+    z-index: 2;
+
+    @media screen and (max-width: 430px) {
+      position: absolute;
+      bottom: -5rem;
+    }
+  }
+
+  .functionMain {
+    margin: 12rem 0 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 770px) {
+      margin: 20vw auto;
+    }
+
+    .functioninner {
+      width: 92%;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 5px 30px 1px;
+      padding-top: 2.5rem;
+    }
+    .functionText {
+      display: flex;
+      justify-content: left;
+      align-items: stretch;
+      position: relative;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+      }
+
+      @media screen and (max-width: 430px) {
+      }
+    }
+
+    .functionTextH {
+      color: white;
+      font-weight: 900;
+      font-size: 4.5rem;
+      line-height: 4rem;
+      text-align: left;
+      animation: glitch-skew 1s infinite linear alternate-reverse;
+      margin: 2rem 4rem 1rem;
+
+      @media screen and (max-width: 770px) {
+        text-align: center;
+      }
+
+      @media screen and (max-width: 430px) {
+        line-height: 2.6rem;
+        font-size: 7vw;
+      }
+    }
+
+    .terminal {
+      position: relative;
+      margin: 3vw auto;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin: 12vw auto;
+      }
+
+      @media screen and (max-width: 430px) {
+        margin: 12vw auto;
+      }
+    }
+
+    .functionImage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+      }
+
+      @media screen and (max-width: 430px) {
+      }
+    }
+  }
+
+  //Old style
+  .background-text {
+    position: absolute;
+    color: #555151;
+    font-weight: bold;
+    font-size: 1.5rem;
+    top: 0;
+    left: 0;
+    bottom: -150px;
+    right: 0;
+    width: 50vw;
+    height: 42vw;
+    margin: auto 80px;
+  }
+
+  .earth_background-text {
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2rem;
+    top: 0;
+    left: 0;
+    bottom: -90px;
+    right: 0;
+    font-family: "Neototem ";
+    z-index: 1;
+    width: 50vw;
+    height: 60vw;
+    margin: auto 100px;
+  }
+
+  .section-title {
+    position: absolute;
+    color: white;
+    font-weight: 900;
+    font-size: 6vw;
+    letter-spacing: 2vw;
+    top: 0;
+    left: 30px;
+    font-family: "Neototem";
+
+    bottom: -1060px;
+    right: 0;
+    width: 50vw;
+    height: 42vw;
+    margin: auto 80px;
+    white-space: nowrap;
+  }
+  @media screen and (max-width: 525px) {
+    .section-title {
+      bottom: -1230px;
+    }
+    .background-text {
+      top: -180px;
+      bottom: 100px;
+    }
+  }
+
+  .section-text {
+    position: absolute;
+    color: #555151;
+    top: 0;
+    font-size: 20px;
+    font-weight: 400;
+    left: 40px;
+    bottom: -1320px;
+    right: 0;
+    width: 35vw;
+    height: 42vw;
+    font-family: "Neototem";
+    margin: auto 80px;
+  }
+
+  &__who {
+    position: absolute;
+    color: #555151;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 50vw;
+    margin: 100px 80px;
+  }
+
+  &__title {
+    position: absolute;
+    color: white;
+    font-weight: 900;
+    font-size: 6vw;
+    letter-spacing: 2vw;
+    text-align: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    height: 42vw;
+    margin: auto 80px;
+    font-family: $raleway;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+    white-space: nowrap;
+
+    @media screen and (max-width: 1140px) {
+      width: unset;
+      height: unset;
+      margin: auto 10px;
+      font-size: 8rem;
+      animation: none;
+      writing-mode: vertical-rl;
+    }
+
+    &:before {
+      @include glitchCopy;
+      left: 2px;
+      text-shadow: -2px 0 #ff00c1;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+
+      @media screen and (max-width: 1140px) {
+        height: unset;
+      }
+    }
+
+    &:after {
+      @include glitchCopy;
+      left: -2px;
+      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+      animation: glitch-anim2 1s infinite linear alternate-reverse;
+
+      @media screen and (max-width: 1140px) {
+        height: unset;
+      }
+    }
+  }
+
+  &__audio-player {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    background-color: #c90a17;
+    z-index: 999;
+  }
+
+  @keyframes flickerAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes flickerAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes flickerAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes flickerAnimation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .animate-flicker {
+    -webkit-animation: flickerAnimation 4s infinite;
+    -moz-animation: flickerAnimation 4s infinite;
+    -o-animation: flickerAnimation 4s infinite;
+    animation: flickerAnimation 4s infinite;
+  }
+  .earth_background-text {
+    visibility: hidden;
+  }
+  .toggler:hover,
+  .earth_background-text {
+    cursor: pointer;
+    visibility: visible;
+  }
+
+  .glitch {
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+
+    &:before {
+      @include glitchCopy;
+      left: 2px;
+      text-shadow: -2px 0 #ff00c1;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    &:after {
+      @include glitchCopy;
+      left: -2px;
+      text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+      animation: glitch-anim2 3s infinite linear alternate-reverse;
+    }
+  }
+  .glitch:hover {
+    cursor: pointer;
+  }
+  @keyframes glitch {
+    1% {
+      transform: rotateX(20deg) skewX(60deg);
+      transform: rotateY(5deg) skewY(20deg);
+      transition: ease-in 2s;
+    }
+    2% {
+      transform: rotateX(20deg) skewX(0deg);
+      transition: ease-out;
+    }
+  }
+
+  @keyframes noise-1 {
+    $steps: 30;
+    @for $i from 1 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+
+  @keyframes noise-2 {
+    $steps: 30;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+}

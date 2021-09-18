@@ -1,0 +1,139 @@
+.contactMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 1rem auto 0rem;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 2rem;
+  }
+
+  .contactInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 30px 1px;
+    width: 92%;
+    position: relative;
+    padding: 1rem 1rem 0rem;
+    height: 600px;
+
+    .contactTextDiv {
+      margin-top: 25rem;
+      margin-left: 30rem;
+      transform: rotate(1deg);
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        margin: 0;
+        transform: rotate(0deg);
+      }
+
+      @media screen and (max-width: 450px) {
+        margin: 0;
+        transform: rotate(0deg);
+      }
+    }
+    .contactText {
+      font-size: 5rem;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        font-size: 4rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+.formMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  margin: 6rem auto;
+  width: 95%;
+  position: relative;
+
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    margin-top: 1vw !important;
+    padding-bottom: 2rem;
+  }
+
+  .formInner {
+    display: flex;
+    justify-content: center;
+    width: 92%;
+    position: relative;
+    box-shadow: 0 5px 30px 1px;
+    padding: 1rem 1rem 0rem;
+
+    .textPart {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+      }
+
+      @media screen and (max-width: 450px) {
+      }
+      .textPartH {
+        margin: 5rem 0 0 0;
+        font-size: 5rem;
+        color: white;
+        @media screen and (min-width: 600px) and (max-width: 770px) {
+          font-size: 4rem;
+        }
+
+        @media screen and (max-width: 450px) {
+          font-size: 3rem;
+        }
+      }
+      .textPartB {
+        margin: 2rem 0 0 4rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        @media screen and (min-width: 600px) and (max-width: 770px) {
+          font-size: 1rem;
+        }
+
+        @media screen and (max-width: 450px) {
+          font-size: 1rem;
+        }
+      }
+    }
+    .formPart {
+      background: rgba(255, 255, 255, 0.808);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4.5px);
+      -webkit-backdrop-filter: blur(4.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0rem 5rem;
+
+      @media screen and (min-width: 600px) and (max-width: 770px) {
+        padding: 0rem;
+      }
+
+      @media screen and (max-width: 450px) {
+        padding: 0rem;
+      }
+    }
+  }
+}
