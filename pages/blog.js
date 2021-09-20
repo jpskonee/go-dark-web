@@ -56,19 +56,8 @@ const BlogHome = ({ blogPosts }) => {
 
   const classNamees = useStyles();
 
-  //handling blog contents
-  const [image, setImage] = useState("");
-  const [category, setCategory] = useState("");
-  const [date, setDate] = useState("");
-  const [title, setTitle] = useState("");
-  const [msg, setMsg] = useState("");
-  const [readMore, setReadMore] = useState("");
-  const [author, setAuthor] = useState("");
-
-  const blogContent = {};
-
   return (
-    <Layout title="Contact">
+    <Layout title="Blog">
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}

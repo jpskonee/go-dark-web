@@ -1,4 +1,4 @@
-.blogMain {
+.singleBlogMain {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -18,7 +18,7 @@
     width: 100%;
   }
 
-  .blogInner {
+  .singleBlogInner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,9 +36,12 @@
       width: 98%;
     }
 
-    .blogTextDiv {
+    .singleBlogTextDiv {
       margin-top: 6rem;
       margin-left: 0rem;
+      width: 80%;
+      display: flex;
+      justify-content: center;
 
       @media screen and (min-width: 600px) and (max-width: 770px) {
         margin: 0;
@@ -46,10 +49,12 @@
 
       @media screen and (max-width: 450px) {
         margin: 0;
+        width: 90%;
       }
     }
-    .blogText {
+    .singleBlogText {
       font-size: 5rem;
+      text-align: center;
 
       @media screen and (min-width: 600px) and (max-width: 770px) {
         font-size: 4rem;
@@ -62,7 +67,7 @@
   }
 }
 
-.postMain {
+.singlePostMain {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -82,24 +87,26 @@
     width: 100%;
   }
 
-  .postInner {
+  .singlePostInner {
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 5px 30px 1px;
     width: 92%;
     position: relative;
-    padding: 3rem 1rem 3rem;
-
+    padding: 1rem 0.5rem 1rem;
     @media screen and (max-width: 450px) {
       width: 98%;
     }
 
-    .postDiv {
+    .singlePostDetail {
       min-height: 27rem;
-      margin: 1.5rem auto;
-      border: $white 1px solid;
       padding: 0.6rem;
+      background: white;
+      color: black;
+      font-family: Arial !important;
+      font-size: 1rem;
+
       @media screen and (min-width: 600px) and (max-width: 770px) {
       }
 

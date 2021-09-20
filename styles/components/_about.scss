@@ -15,6 +15,7 @@
   @media screen and (max-width: 450px) {
     margin-top: 1vw !important;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   .bannerInner {
@@ -31,6 +32,13 @@
     box-shadow: 0 5px 30px 1px;
     padding: 1rem 1rem 0rem;
     height: 600px;
+
+    @media screen and (min-width: 600px) and (max-width: 770px) {
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 98%;
+    }
 
     .bannerTextDiv {
       margin-top: 25rem;
@@ -78,6 +86,7 @@
   @media screen and (max-width: 450px) {
     margin-top: 1vw !important;
     padding-bottom: 1rem;
+    width: 98%;
   }
 
   .aboutInner {
@@ -104,6 +113,7 @@
       text-align: center;
       margin: 3rem 4rem 0;
       font-size: 2rem;
+      line-height: 3rem;
 
       @media screen and (min-width: 600px) and (max-width: 770px) {
         font-size: 1.2rem;
@@ -183,11 +193,12 @@
         display: flex;
         justify-self: center;
         align-items: center;
+        margin: 3rem 0;
       }
 
       .topicText {
         font-size: 1.4rem;
-        line-height: 2.3rem;
+        line-height: 3rem;
 
         @media screen and (min-width: 600px) and (max-width: 770px) {
           font-size: 1rem;
@@ -195,8 +206,9 @@
         }
 
         @media screen and (max-width: 450px) {
-          font-size: 1rem;
+          font-size: 1.2rem;
           text-align: center;
+          line-height: 2.5rem;
         }
       }
     }

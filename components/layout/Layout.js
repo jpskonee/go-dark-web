@@ -12,10 +12,10 @@ const Layout = ({ title, children }) => {
   const loading = store.getState().settings.loading;
 
   let width;
-  if (window.innerWidth > 500) {
+  if (window.innerWidth > 570) {
     width = 520;
   } else {
-    width = window.innerWidth - 10;
+    width = window.innerWidth - 5;
   }
 
   const experience = useRef(null);

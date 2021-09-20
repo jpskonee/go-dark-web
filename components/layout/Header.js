@@ -126,7 +126,13 @@ const Header = () => {
         </div>
       </div>
       {dropDown && (
-        <animated.div style={{ background: "black" }} classNameName="dropDown">
+        <animated.div
+          initial={{ y: 500 }}
+          animate={{ y: -300 }}
+          transition={{ duration: 3, delay: 2 }}
+          style={{ background: "black" }}
+          className="dropDown"
+        >
           <div className="menu-item">
             <Link href="/">
               <a> Home </a>

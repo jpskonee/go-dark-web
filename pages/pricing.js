@@ -75,7 +75,13 @@ const Pricing = () => {
           >
             <div className="tableMain pricingTable">
               <Grid container className="tableInner pricingTable-firstTable">
-                <Grid item md={4} sm={12} xs={12}>
+                <Grid
+                  style={{ marginBottom: "3rem" }}
+                  item
+                  md={4}
+                  sm={12}
+                  xs={12}
+                >
                   <li className="pricingTable-firstTable_table">
                     <h1 className="pricingTable-firstTable_table__header">
                       Privacy Risk Report
@@ -100,7 +106,13 @@ const Pricing = () => {
                   </li>
                 </Grid>
 
-                <Grid item md={4} sm={12} xs={12}>
+                <Grid
+                  style={{ marginBottom: "3rem" }}
+                  item
+                  md={4}
+                  sm={12}
+                  xs={12}
+                >
                   <li className="pricingTable-firstTable_table">
                     <h1 className="pricingTable-firstTable_table__header">
                       Personal Protection Report
@@ -126,7 +138,13 @@ const Pricing = () => {
                   </li>
                 </Grid>
 
-                <Grid item md={4} sm={12} xs={12}>
+                <Grid
+                  style={{ marginBottom: "3rem" }}
+                  item
+                  md={4}
+                  sm={12}
+                  xs={12}
+                >
                   <li className="pricingTable-firstTable_table">
                     <h1 className="pricingTable-firstTable_table__header">
                       Internet Anonymity and Data Remediation

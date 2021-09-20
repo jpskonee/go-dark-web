@@ -5,8 +5,10 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  margin: 0;
   z-index: 1;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
 
   &.active {
     display: flex;
@@ -16,6 +18,10 @@
       height: 300px;
       animation: modalFadeIn 0.5s 0.8s cubic-bezier(0.165, 0.14, 0.44, 1)
         forwards;
+
+      @media screen and (max-width: 450px) {
+        width: 450px;
+      }
 
       &-title,
       &-buttons {
@@ -69,6 +75,11 @@
       text-align: center;
       padding: 0 15px;
       margin: 0;
+
+      @media screen and (max-width: 450px) {
+        width: 90%;
+        font-size: 2rem;
+      }
     }
 
     &-buttons {
@@ -85,7 +96,7 @@
       border-radius: 3px;
 
       rect {
-        stroke: #fe3665;
+        stroke: $red;
         stroke-width: 2px;
         stroke-dasharray: 1634;
         stroke-dashoffset: 1634;
@@ -106,7 +117,14 @@
     font-weight: 800;
     outline: none;
     border: none;
-    z-index: 2;
+    z-index: 999;
+    font-size: 1.3rem;
+    letter-spacing: 0.3rem;
+
+    @media screen and (max-width: 450px) {
+      height: 35px;
+      width: 150px;
+    }
 
     &-content {
       opacity: 0;
@@ -128,7 +146,7 @@
       transform: skewX(20deg);
 
       rect {
-        stroke: #fe3665;
+        stroke: $red;
         stroke-width: 2px;
         stroke-dasharray: 369;
         stroke-dashoffset: 369;
@@ -139,7 +157,7 @@
 
     &:hover {
       .experience__button-svg {
-        background: #fe3665;
+        background: $red;
         -webkit-transform: skewX(-20deg);
         -moz-transform: skewX(-20deg);
         -ms-transform: skewX(-20deg);
@@ -148,15 +166,14 @@
     }
   }
 }
-.experience_rect{
+.experience_rect {
   width: "520px";
   height: "300px";
 }
 
-
 @media screen and (max-width: 530px) {
   .experience_rect {
-   width: "400px";
-  height: "300px"; 
+    width: "400px";
+    height: "300px";
   }
 }
