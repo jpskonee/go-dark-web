@@ -138,7 +138,7 @@ const BlogHome = ({ blogPosts }) => {
           <Footer />
         </Parallax>
       </div>
-      <div className="audio-player">
+      {/* <div className="audio-player">
         <Plyr
           source={{
             type: "audio",
@@ -155,7 +155,7 @@ const BlogHome = ({ blogPosts }) => {
           }}
           ref={plyr}
         />
-      </div>
+      </div> */}
     </Layout>
   );
 };

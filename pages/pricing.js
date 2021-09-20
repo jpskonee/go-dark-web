@@ -180,7 +180,7 @@ const Pricing = () => {
           </div>
         </Parallax>
       </div>
-      <div className="audio-player">
+      {/* <div className="audio-player">
         <Plyr
           source={{
             type: "audio",
@@ -197,7 +197,7 @@ const Pricing = () => {
           }}
           ref={plyr}
         />
-      </div>
+      </div> */}
     </Layout>
   );
 };

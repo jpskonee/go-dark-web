@@ -141,7 +141,7 @@ const Contact = () => {
           </div>
         </Parallax>
       </div>
-      <div className="audio-player">
+      {/* <div className="audio-player">
         <Plyr
           source={{
             type: "audio",
@@ -158,7 +158,7 @@ const Contact = () => {
           }}
           ref={plyr}
         />
-      </div>
+      </div> */}
     </Layout>
   );
 };

@@ -147,7 +147,7 @@ const About = () => {
           </Grid>
         </div>
       </div>
-      <div className="audio-player">
+      {/* <div className="audio-player">
         <Plyr
           source={{
             type: "audio",
@@ -164,7 +164,7 @@ const About = () => {
           }}
           ref={plyr}
         />
-      </div>
+      </div> */}
     </Layout>
   );
 };

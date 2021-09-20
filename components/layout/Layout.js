@@ -6,6 +6,9 @@ import Loading from "./Loading";
 import { useDispatch, getState } from "react-redux";
 import { setSettings } from "../../store/actions/settingsActions";
 import store from "../../store/store";
+import Plyr from "plyr-react";
+import ReactAudioPlayer from "react-audio-player";
+import audio from "../../utils/Audio";
 
 const Layout = ({ title, children }) => {
   const dispatch = useDispatch();
@@ -106,12 +109,33 @@ const Layout = ({ title, children }) => {
               </div>
             </div>
           </div>
+
           <Loading onEnd={onEnd} />
         </>
       ) : (
         <>
           <Header />
           {children}
+          <div
+            style={{ marginTop: "14rem", zIndex: "999", background: "red" }}
+            className="audio-player"
+          >
+            <Plyr
+              source={{
+                type: "audio",
+                sources: [
+                  {
+                    src: "/audio.mp3",
+                    type: "audio/mp3",
+                  },
+                ],
+              }}
+              options={{
+                controls: ["play", "mute"],
+                loop: { active: true },
+              }}
+            />
+          </div>
         </>
       )}
     </div>

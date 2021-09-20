@@ -7,6 +7,10 @@ import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import { useSpring, config, animated } from "react-spring";
 
+import Plyr from "plyr-react";
+import ReactAudioPlayer from "react-audio-player";
+import audio from "../../utils/Audio";
+
 const Header = () => {
   const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
@@ -28,6 +32,7 @@ const Header = () => {
     onRest: () => set(!flip),
   });
 
+  console.log("here");
   return (
     <div>
       <div className="headerAll">
