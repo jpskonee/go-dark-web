@@ -33,18 +33,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-const url = (name, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
-  }`;
+// const url = (name, wrap = false) =>
+//   `${
+//     wrap ? "url(" : ""
+//   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+//     wrap ? ")" : ""
+//   }`;
 
 const BlogHome = ({ blogPosts }) => {
-  const parallax = useRef(null);
-
   const classes = useStyles();
   console.log("blog");
 
@@ -59,80 +57,62 @@ const BlogHome = ({ blogPosts }) => {
 
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Parallax ref={parallax} pages={3}>
-          <ParallaxLayer
-            offset={1}
-            speed={1}
-            style={{ backgroundColor: "#020205" }}
-          />
-
-          <ParallaxLayer
-            offset={0}
-            speed={0}
-            factor={3}
+        <div className="blogMain">
+          <Grid
             style={{
-              backgroundImage: url("stars", true),
-              backgroundSize: "cover",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "top",
             }}
-          />
-
-          <div className="blogMain">
-            <Grid
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "top",
-              }}
-              container
-              className="blogInner"
-            >
-              <Grid item className="blogTextDiv">
-                <div className="blogText" text={["Pricing", "Go Dark"]}>
-                  {" "}
-                  Blog{" "}
-                </div>
-              </Grid>
+            container
+            className="blogInner"
+          >
+            <Grid item className="blogTextDiv">
+              <div className="blogText" text={["Pricing", "Go Dark"]}>
+                {" "}
+                Blog{" "}
+              </div>
             </Grid>
-          </div>
+          </Grid>
+        </div>
 
-          <div style={{ marginBottom: "12rem" }} className="postMain">
-            <Grid container className="postInner">
-              {/* mappibg through post */}
+        <div style={{ marginBottom: "12rem" }} className="postMain">
+          <Grid container className="postInner">
+            {/* mappibg through post */}
 
-              {blogPosts.map((post) => (
-                <Grid key={post.sys.id} item md={5} xs={12} className="postDiv">
-                  <Image
-                    className="postImage"
-                    src={`https://${post.fields.Thumbnail.fields.file.url}`}
-                    width={600}
-                    height={400}
-                  />
-                  <div className="postTextDiv">
-                    <div className="postCatDiv">
-                      <div className="postCat">
-                        {post.fields.category} |{" "}
-                        <span className="postDate">{post.sys.createdAt}</span>
-                      </div>
-                    </div>
-                    <div className="postTitle">{post.fields.title}</div>
-                    <div className="postMsg">
-                      {/* {post.fields.post} */}
-                      <Link
-                        className="postReadMoreBtn"
-                        href={`/posts/${post.fields.slug}`}
-                      >
-                        Read More
-                      </Link>
-                    </div>
-                    <div id="postAuthorDiv">
-                      <div className="postAuthor">{post.fields.author} </div>
+            {blogPosts.map((post) => (
+              <Grid key={post.sys.id} item md={5} xs={12} className="postDiv">
+                <Image
+                  className="postImage"
+                  src={`https://${post.fields.Thumbnail.fields.file.url}`}
+                  width={600}
+                  height={400}
+                />
+                <div className="postTextDiv">
+                  <div className="postCatDiv">
+                    <div className="postCat">
+                      {post.fields.category} |{" "}
+                      <span className="postDate">{post.sys.createdAt}</span>
                     </div>
                   </div>
-                </Grid>
-              ))}
-            </Grid>
-          </div>
-        </Parallax>
+                  <div className="postTitle">{post.fields.title}</div>
+                  <div className="postMsg">
+                    {/* {post.fields.post} */}
+                    <Link
+                      className="postReadMoreBtn"
+                      href={`/posts/${post.fields.slug}`}
+                    >
+                      Read More
+                    </Link>
+                  </div>
+                  <div id="postAuthorDiv">
+                    <div className="postAuthor">{post.fields.author} </div>
+                  </div>
+                </div>
+              </Grid>
+            ))}
+          </Grid>
+        </div>
         {/* <Footer /> */}
       </div>
     </>

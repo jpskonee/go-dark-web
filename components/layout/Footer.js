@@ -23,18 +23,14 @@ const Footer = () => {
     <div className="footerDiv">
       <Grid container className="footerinner">
         <Grid className="earth-div" item md={12}>
-          <div className="earth-img">
-            <Link
-              href="/contact"
-            >
+          <div
+            onMouseOver={onMouseOver}
+            onMouseLeave={onMouseLeave}
+            className="earth-img"
+          >
+            <Link href="/contact">
               <a>
-              <Image
-                src="/blue-earth.gif"
-                width={400}
-                height={400}
-           
-                alt=""
-              />
+                <Image src="/blue-earth.gif" width={400} height={400} alt="" />
               </a>
             </Link>
           </div>

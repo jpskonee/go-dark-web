@@ -6,6 +6,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "plyr-react/dist/plyr.css";
 import { useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
+import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,53 +32,26 @@ const composePost = () => {
 
   const classNamees = useStyles();
 
-  //handling blog contents
+  const form = useRef();
 
-  const [image, setImage] = useState("");
-  const [category, setCategory] = useState("");
-  const [title, setTitle] = useState("");
-  const [msg, setMsg] = useState(null);
-  const [author, setAuthor] = useState("");
-
-  const [doneImgUpload, setDoneImgUpload] = useState(false);
-  const [sentToDB, setSentToDB] = useState(false);
-
-  const sendData = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    await goDarkBlog.doc().set({
-      title: title,
-      msg: msg,
-      img: image,
-      category: category,
-      author: author,
-      time: new Date().toLocaleString(),
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
 
-    setSentToDB(true);
-    setTimeout(() => {
-      window.location.reload();
-    }, 3000);
-  };
-
-  //Handle Banner image upload
-  const handleImgBanner = async (e) => {
-    const file = e.target.files[0];
-    const storageRef = app.storage().ref();
-    const fileRef = storageRef.child(file.name);
-    await fileRef.put(file);
-    setImage(await fileRef.getDownloadURL());
-    setDoneImgUpload(true);
-  };
-
-  //Handle Icon image upload
-  const handleImgIcon = async (e) => {
-    const file = e.target.files[0];
-    const storageRef = app.storage().ref();
-    const fileRef = storageRef.child(file.name);
-    await fileRef.put(file);
-    setImage(await fileRef.getDownloadURL());
-    setDoneImgUpload(true);
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_USER_ID"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -141,6 +115,8 @@ const composePost = () => {
                   className={`${classNamees.root} formPart`}
                   noValidate
                   autoComplete="off"
+                  ref={form}
+                  onSubmit={sendEmail}
                 >
                   <h1 style={{ color: "black" }}> Compose a new Blog</h1>
                   <div style={{ color: "black", lineHeight: "3rem" }}>
@@ -208,6 +184,7 @@ const composePost = () => {
                         fontSize: "1.2rem",
                       }}
                       variant="outlined"
+                      type="submit"
                     >
                       Send
                     </Button>
