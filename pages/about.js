@@ -2,6 +2,7 @@ import { Grid } from "@material-ui/core";
 import Image from "next/image";
 import "plyr-react/dist/plyr.css";
 import ReactTypingEffect from "react-typing-effect";
+import Head from "next/head";
 import Footer from "../components/layout/Footer";
 
 const url = (name, wrap = false) =>
@@ -12,6 +13,7 @@ const url = (name, wrap = false) =>
   }`;
 
 const About = () => {
+  console.log("about");
   return (
     <div
       className="home"
@@ -24,6 +26,11 @@ const About = () => {
         backgroundAttachment: "fixed",
       }}
     >
+      <Head>
+        <title>About- GoDark</title>
+
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="bannerMain">
         <Grid container className="bannerInner">
           <Grid item className="bannerTextDiv">

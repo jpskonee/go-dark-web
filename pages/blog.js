@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import Footer from "../components/layout/Footer";
+import Head from "next/head";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -45,6 +46,7 @@ const BlogHome = ({ blogPosts }) => {
   const parallax = useRef(null);
 
   const classes = useStyles();
+  console.log("blog");
 
   return (
     <>
@@ -52,6 +54,11 @@ const BlogHome = ({ blogPosts }) => {
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
       >
+        <Head>
+          <title>Blog- GoDark</title>
+
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <Parallax ref={parallax} pages={3}>
           <ParallaxLayer
             offset={1}
@@ -126,7 +133,7 @@ const BlogHome = ({ blogPosts }) => {
             </Grid>
           </div>
         </Parallax>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

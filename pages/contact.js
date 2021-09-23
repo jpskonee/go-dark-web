@@ -7,6 +7,7 @@ import "plyr-react/dist/plyr.css";
 import { useRef } from "react";
 import Footer from "../components/layout/Footer";
 import GoogleMap from "../components/shared/GoogleMap";
+import Head from "next/head";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,8 +33,16 @@ const Contact = () => {
 
   const classNamees = useStyles();
 
+  console.log("contact");
+
   return (
     <>
+      {" "}
+      <Head>
+        <title>Contact - GoDark</title>
+
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -130,7 +139,7 @@ const Contact = () => {
             </Grid>
           </div>
         </Parallax>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

@@ -56,6 +56,8 @@ const SinglePost = ({ blogPosts }) => {
     publisedDate,
     slug,
   } = blogPosts.fields;
+
+  console.log("p.blog");
   return (
     <>
       <div
@@ -105,7 +107,7 @@ const SinglePost = ({ blogPosts }) => {
             </Grid>
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

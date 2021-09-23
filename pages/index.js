@@ -2,6 +2,7 @@ import { Grid } from "@material-ui/core";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Head from "next/head";
 import "plyr-react/dist/plyr.css";
 import { useRef } from "react";
 import ReactTypingEffect from "react-typing-effect";
@@ -17,12 +18,19 @@ const url = (name, wrap = false) =>
 
 const Home = () => {
   const parallax = useRef(null);
+  console.log("home");
 
   return (
     <div
       className="home"
       style={{ width: "100%", height: "100%", background: "#020205" }}
     >
+      {" "}
+      <Head>
+        <title>Home - GoDark</title>
+
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Parallax ref={parallax} pages={4}>
         <ParallaxLayer
           offset={0}

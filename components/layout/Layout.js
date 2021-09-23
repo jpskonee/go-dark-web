@@ -21,6 +21,7 @@ const Layout = ({ title, children }) => {
   const onEnd = () => {
     experience.current.classList.add("active");
   };
+  console.log("layout");
 
   return (
     <div className="layout">
@@ -118,7 +119,6 @@ const Layout = ({ title, children }) => {
           >
             <Plyr source={playerSource} options={playerOptions} />
           </div>
-          {/* <Footer /> */}
         </>
       )}
     </div>
