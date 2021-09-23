@@ -44,14 +44,11 @@ const Home = () => {
                 GO DARK
               </span>
               <div className="headerdesp">
-                orem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                commodo ligula eget dolor. Aenean massa. ridiculus mus. <br />{" "}
-                Donec quam felis,
+                Specializing in data discovery, investigative exploration, and
+                helping you to disappear. When you want to know, we'll find it.
+                When you want to go dark, we're here.
               </div>
-              <div
-                onClick={() => parallax.current.scrollTo(1)}
-                className="headerBtn"
-              >
+              <div className="headerBtn">
                 {" "}
                 <ReactTypingEffect
                   text={["Explore", "Disappear", "Discover"]}
@@ -80,10 +77,7 @@ const Home = () => {
                 <div data-text="GO DARK" className="functionTextH">
                   Want to know <br /> more about you?
                 </div>
-                <div
-                  onClick={() => parallax.current.scrollTo(2)}
-                  className="terminal"
-                >
+                <div className="terminal">
                   <Terminal />
                 </div>
               </div>
