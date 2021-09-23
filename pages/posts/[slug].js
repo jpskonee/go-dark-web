@@ -105,6 +105,7 @@ const SinglePost = ({ blogPosts }) => {
             </Grid>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -16,10 +16,7 @@ const url = (name, wrap = false) =>
   }`;
 
 const Home = () => {
-
   const parallax = useRef(null);
-
-
 
   return (
     <div
@@ -97,9 +94,7 @@ const Home = () => {
 
         <Footer />
       </Parallax>
-
     </div>
-
   );
 };
 

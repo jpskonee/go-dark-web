@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useRef } from "react";
 import Footer from "../components/layout/Footer";
 
-
 export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -43,7 +42,6 @@ const url = (name, wrap = false) =>
   }`;
 
 const BlogHome = ({ blogPosts }) => {
-
   const parallax = useRef(null);
 
   const classes = useStyles();
@@ -127,10 +125,10 @@ const BlogHome = ({ blogPosts }) => {
               ))}
             </Grid>
           </div>
-          <Footer />
         </Parallax>
+        <Footer />
       </div>
-      </>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "plyr-react/dist/plyr.css";
 import { useRef } from "react";
+import Footer from "../components/layout/Footer";
 import GoogleMap from "../components/shared/GoogleMap";
 
 const useStyles = makeStyles((theme) => ({
@@ -129,6 +130,7 @@ const Contact = () => {
             </Grid>
           </div>
         </Parallax>
+        <Footer />
       </div>
     </>
   );

@@ -6,6 +6,7 @@ import Loading from "./Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { setSettings } from "../../store/actions/settingsActions";
 import Plyr from "plyr-react";
+import Footer from "./Footer";
 
 const Layout = ({ title, children }) => {
   const dispatch = useDispatch();
@@ -117,6 +118,7 @@ const Layout = ({ title, children }) => {
           >
             <Plyr source={playerSource} options={playerOptions} />
           </div>
+          {/* <Footer /> */}
         </>
       )}
     </div>
