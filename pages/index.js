@@ -46,7 +46,7 @@ const Home = () => {
               <div className="headerdesp">
                 Specializing in data discovery, investigative exploration, and
                 helping you to disappear. When you want to know, we'll find it.
-                When you want to go dark, we're here.
+                <br /> When you want to go dark, <br /> we're here.
               </div>
               <div className="headerBtn">
                 {" "}
