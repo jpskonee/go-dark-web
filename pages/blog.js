@@ -1,13 +1,18 @@
-import { Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import Plyr from "plyr-react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import Layout from "../components/layout/Layout";
+import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import "plyr-react/dist/plyr.css";
+import Link from "next/link";
+import { Grid } from "@material-ui/core";
+import Image from "next/image";
+import Head from "next/head";
+import { makeStyles } from "@material-ui/core/styles";
+
 //Contentful Blog Post
 import { createClient } from "contentful";
-import Image from "next/image";
-import Link from "next/link";
-import { useRef } from "react";
-import Footer from "../components/layout/Footer";
-import Head from "next/head";
+import MusicPlayer from "../components/layout/MusicPlayer";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -19,6 +24,7 @@ export async function getStaticProps() {
   return {
     props: {
       blogPosts: posts.items,
+      posts: posts,
     },
   };
 }
@@ -33,30 +39,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-// const url = (name, wrap = false) =>
-//   `${
-//     wrap ? "url(" : ""
-//   }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-//     wrap ? ")" : ""
-//   }`;
+const url = (name, wrap = false) =>
+  `${
+    wrap ? "url(" : ""
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ")" : ""
+  }`;
 
-const BlogHome = ({ blogPosts }) => {
-  const classes = useStyles();
-  console.log("blog");
+const BlogHome = ({ blogPosts, posts }) => {
+  const { fullExperience } = useSelector((state) => state.settings);
+  const parallax = useRef(null);
+  const plyr = useRef(null);
+
+  const classNamees = useStyles();
 
   return (
     <>
+      <Head>
+        <title>Blog - GoDark</title>
+
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
       >
-        <Head>
-          <title>Blog- GoDark</title>
-
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <div className="blogMain">
           <Grid
             style={{
@@ -82,11 +91,10 @@ const BlogHome = ({ blogPosts }) => {
 
             {blogPosts.map((post) => (
               <Grid key={post.sys.id} item md={5} xs={12} className="postDiv">
-                <Image
+                <img
                   className="postImage"
-                  src={`https://${post.fields.Thumbnail.fields.file.url}`}
-                  width={600}
-                  height={400}
+                  src={`${post.fields.Thumbnail.fields.file.url}`}
+                  style={{ width: "100%" }}
                 />
                 <div className="postTextDiv">
                   <div className="postCatDiv">
@@ -102,7 +110,7 @@ const BlogHome = ({ blogPosts }) => {
                       className="postReadMoreBtn"
                       href={`/posts/${post.fields.slug}`}
                     >
-                      Read More
+                      <a>Read More</a>
                     </Link>
                   </div>
                   <div id="postAuthorDiv">
@@ -113,7 +121,6 @@ const BlogHome = ({ blogPosts }) => {
             ))}
           </Grid>
         </div>
-        {/* <Footer /> */}
       </div>
     </>
   );
