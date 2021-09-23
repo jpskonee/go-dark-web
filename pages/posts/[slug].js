@@ -57,7 +57,7 @@ const SinglePost = ({ blogPosts }) => {
     slug,
   } = blogPosts.fields;
   return (
-    <Layout title={`Go-Dark:${title}`}>
+    <>
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -106,7 +106,7 @@ const SinglePost = ({ blogPosts }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

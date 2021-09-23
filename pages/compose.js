@@ -1,20 +1,11 @@
-import Plyr from "plyr-react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
-import Loading from "../components/layout/Loading";
-import Link from "next/link";
 import { Grid } from "@material-ui/core";
-import Image from "next/image";
-import Footer from "../components/layout/Footer";
-import { motion } from "framer-motion";
-import GoogleMapReact from "google-map-react";
-import GoogleMap from "../components/shared/GoogleMap";
+import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import "plyr-react/dist/plyr.css";
+import { useRef, useState } from "react";
+import Footer from "../components/layout/Footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,9 +27,7 @@ const url = (name, wrap = false) =>
   }`;
 
 const composePost = () => {
-  const { fullExperience } = useSelector((state) => state.settings);
   const parallax = useRef(null);
-  const plyr = useRef(null);
 
   const classNamees = useStyles();
 
@@ -92,7 +81,7 @@ const composePost = () => {
   };
 
   return (
-    <Layout title="Contact">
+    <>
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -259,26 +248,7 @@ const composePost = () => {
           <Footer />
         </Parallax>
       </div>
-
-      <div className="audio-player">
-        <Plyr
-          source={{
-            type: "audio",
-            sources: [
-              {
-                src: "/audio.mp3",
-                type: "audio/mp3",
-              },
-            ],
-          }}
-          options={{
-            controls: ["play", "mute", "volume"],
-            loop: { active: true },
-          }}
-          ref={plyr}
-        />
-      </div>
-    </Layout>
+    </>
   );
 };
 

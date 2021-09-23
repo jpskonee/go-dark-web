@@ -1,17 +1,12 @@
-import Plyr from "plyr-react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import ReactTypingEffect from "react-typing-effect";
 import { Grid } from "@material-ui/core";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import "plyr-react/dist/plyr.css";
+import { useRef } from "react";
+import ReactTypingEffect from "react-typing-effect";
 import Footer from "../components/layout/Footer";
 import Terminal from "../components/shared/Terminal";
-import { motion } from "framer-motion";
 
 const url = (name, wrap = false) =>
   `${
@@ -21,28 +16,12 @@ const url = (name, wrap = false) =>
   }`;
 
 const Home = () => {
-  const { fullExperience } = useSelector((state) => state.settings);
+
   const parallax = useRef(null);
-  const plyr = useRef(null);
-  const router = useRouter();
 
-  const onMouseOver = (e) => {
-    document.getElementById("earth_background-text").style.display = "block";
-  };
 
-  const onMouseLeave = (e) => {
-    document.getElementById("earth_background-text").style.display = "none";
-  };
-  // here
-
-  useEffect(() => {
-    if (fullExperience) {
-      plyr?.current?.plyr.play();
-    }
-  }, [plyr, fullExperience]);
 
   return (
-    // <Layout title="Home">
     <div
       className="home"
       style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -119,27 +98,8 @@ const Home = () => {
         <Footer />
       </Parallax>
 
-      {/* <div className="audio-player">
-        <Plyr
-          source={{
-            type: "audio",
-            sources: [
-              {
-                src: "/audio.mp3",
-                type: "audio/mp3",
-              },
-            ],
-          }}
-          options={{
-            controls: ["play", "mute", "volume"],
-            loop: { active: true },
-          }}
-          ref={plyr}
-        />
-      </div> */}
-
-      {/* </Layout> */}
     </div>
+
   );
 };
 

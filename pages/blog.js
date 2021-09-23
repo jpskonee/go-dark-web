@@ -1,18 +1,13 @@
-import Plyr from "plyr-react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
-import Link from "next/link";
 import { Grid } from "@material-ui/core";
-import Image from "next/image";
-import Footer from "../components/layout/Footer";
-import { motion } from "framer-motion";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 //Contentful Blog Post
 import { createClient } from "contentful";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
+import Footer from "../components/layout/Footer";
+
 
 export async function getStaticProps() {
   const client = createClient({
@@ -48,16 +43,13 @@ const url = (name, wrap = false) =>
   }`;
 
 const BlogHome = ({ blogPosts }) => {
-  console.log(blogPosts);
 
-  const { fullExperience } = useSelector((state) => state.settings);
   const parallax = useRef(null);
-  const plyr = useRef(null);
 
-  const classNamees = useStyles();
+  const classes = useStyles();
 
   return (
-    <Layout title="Blog">
+    <>
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -138,25 +130,7 @@ const BlogHome = ({ blogPosts }) => {
           <Footer />
         </Parallax>
       </div>
-      {/* <div className="audio-player">
-        <Plyr
-          source={{
-            type: "audio",
-            sources: [
-              {
-                src: "/audio.mp3",
-                type: "audio/mp3",
-              },
-            ],
-          }}
-          options={{
-            controls: ["play", "mute", "volume"],
-            loop: { active: true },
-          }}
-          ref={plyr}
-        />
-      </div> */}
-    </Layout>
+      </>
   );
 };
 

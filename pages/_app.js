@@ -9,13 +9,13 @@ import Layout from "../components/layout/Layout";
 import "../fonts/styles.css";
 
 const App = ({ Component, pageProps }) => {
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Component {...pageProps} />
-      </PersistGate>
-    </Provider>
-  );
+    const getLayout = Component.getLayout || (
+      page => <Provider store={store}>
+       <Layout>{page}</Layout>
+
+        </Provider>
+    )
+    return getLayout(<Component {...pageProps} /> )
 };
 
 App.propTypes = {

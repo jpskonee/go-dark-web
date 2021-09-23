@@ -1,10 +1,7 @@
-import Plyr from "plyr-react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
-import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
 import Link from "next/link";
+import "plyr-react/dist/plyr.css";
+import { useRef } from "react";
 
 const url = (name, wrap = false) =>
   `${
@@ -14,9 +11,7 @@ const url = (name, wrap = false) =>
   }`;
 
 const Blog = () => {
-  const { fullExperience } = useSelector((state) => state.settings);
   const parallax = useRef(null);
-  const plyr = useRef(null);
 
   const onMouseOver = (e) => {
     document.getElementById("earth_background-text").style.display = "block";
@@ -27,14 +22,9 @@ const Blog = () => {
   };
   // here
 
-  useEffect(() => {
-    if (fullExperience) {
-      plyr?.current?.plyr.play();
-    }
-  }, [plyr, fullExperience]);
 
   return (
-    <Layout title="Id">
+    <>
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -381,32 +371,7 @@ const Blog = () => {
           </ParallaxLayer>
         </Parallax>
       </div>
-      <div className="audio-player">
-        <Plyr
-          source={{
-            type: "audio",
-            sources: [
-              {
-                src: "/audio.mp3",
-                type: "audio/mp3",
-              },
-            ],
-          }}
-          options={{
-            controls: [
-              "play",
-              "progress",
-              "current-time",
-              "duration",
-              "mute",
-              "volume",
-            ],
-            loop: { active: true },
-          }}
-          ref={plyr}
-        />
-      </div>
-    </Layout>
+      </>
   );
 };
 

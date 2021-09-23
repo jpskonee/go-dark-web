@@ -1,26 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Header from "./Header";
 import Loading from "./Loading";
-import { useDispatch, getState } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSettings } from "../../store/actions/settingsActions";
-import store from "../../store/store";
 import Plyr from "plyr-react";
-import ReactAudioPlayer from "react-audio-player";
-import audio from "../../utils/Audio";
 
 const Layout = ({ title, children }) => {
   const dispatch = useDispatch();
-  const loading = store.getState().settings.loading;
+  const loading = useSelector((state) => state.settings.loading);
+  const { playerSource, playerOptions } = useSelector(
+    (state) => state.settings
+  );
 
   let width;
-  if (window.innerWidth > 570) {
-    width = 520;
-  } else {
-    width = window.innerWidth - 5;
-  }
-
   const experience = useRef(null);
 
   const onEnd = () => {
@@ -89,7 +83,7 @@ const Layout = ({ title, children }) => {
                   onClick={() => {
                     dispatch(
                       setSettings({
-                        fullExperience: false,
+                        fullExperience: null,
                         loading: false,
                       })
                     );
@@ -116,25 +110,12 @@ const Layout = ({ title, children }) => {
         <>
           <Header />
           {children}
+
           <div
-            style={{ marginTop: "14rem", zIndex: "999", background: "red" }}
+            style={{ marginTop: "14rem", zIndex: "999" }}
             className="audio-player"
           >
-            <Plyr
-              source={{
-                type: "audio",
-                sources: [
-                  {
-                    src: "/audio.mp3",
-                    type: "audio/mp3",
-                  },
-                ],
-              }}
-              options={{
-                controls: ["play", "mute"],
-                loop: { active: true },
-              }}
-            />
+            <Plyr source={playerSource} options={playerOptions} />
           </div>
         </>
       )}

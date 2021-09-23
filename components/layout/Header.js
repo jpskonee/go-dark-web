@@ -32,7 +32,6 @@ const Header = () => {
     onRest: () => set(!flip),
   });
 
-  console.log("here");
   return (
     <div>
       <div className="headerAll">
@@ -46,7 +45,7 @@ const Header = () => {
               </Link>
             </div>
             <div className="menu-item">
-              <Link href="/about">
+              <Link href="/about" >
                 <a>About</a>
               </Link>
             </div>

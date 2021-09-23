@@ -25,18 +25,17 @@ const Footer = () => {
         <Grid className="earth-div" item md={12}>
           <div className="earth-img">
             <Link
-              id="toggler"
-              className="toggler glitch animate-flicker"
               href="/contact"
             >
+              <a>
               <Image
                 src="/blue-earth.gif"
                 width={400}
                 height={400}
-                onMouseOver={onMouseOver}
-                onMouseLeave={onMouseLeave}
+           
                 alt=""
               />
+              </a>
             </Link>
           </div>
           {hover && (

@@ -1,15 +1,7 @@
-import Plyr from "plyr-react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
-import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
-import Link from "next/link";
 import { Grid } from "@material-ui/core";
 import Image from "next/image";
+import "plyr-react/dist/plyr.css";
 import ReactTypingEffect from "react-typing-effect";
-import Footer from "../components/layout/Footer";
-import { motion } from "framer-motion";
 
 const url = (name, wrap = false) =>
   `${
@@ -19,18 +11,8 @@ const url = (name, wrap = false) =>
   }`;
 
 const About = () => {
-  const { fullExperience } = useSelector((state) => state.settings);
-  const parallax = useRef(null);
-  const plyr = useRef(null);
-
-  useEffect(() => {
-    if (fullExperience) {
-      plyr?.current?.plyr.play();
-    }
-  }, [plyr, fullExperience]);
-
   return (
-    <Layout title="About">
+   
       <div
         className="home"
         style={{
@@ -63,7 +45,7 @@ const About = () => {
               have taken their first steps to understanding what information
               about them is out there.
             </Grid>
-            <Grid className="focusMain" item={12} container>
+            <Grid className="focusMain" item md={12} container>
               <Grid className="focusItem" item md={4}>
                 <Image
                   src="/lock.gif"
@@ -147,25 +129,7 @@ const About = () => {
           </Grid>
         </div>
       </div>
-      {/* <div className="audio-player">
-        <Plyr
-          source={{
-            type: "audio",
-            sources: [
-              {
-                src: "/audio.mp3",
-                type: "audio/mp3",
-              },
-            ],
-          }}
-          options={{
-            controls: ["play", "mute", "volume"],
-            loop: { active: true },
-          }}
-          ref={plyr}
-        />
-      </div> */}
-    </Layout>
+    
   );
 };
 

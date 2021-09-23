@@ -1,10 +1,9 @@
-import Image from "next/image";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
-import Link from "next/link";
 import Head from "next/head";
+import Link from "next/link";
+import "plyr-react/dist/plyr.css";
+import { useRef } from "react";
+import { useSelector } from "react-redux";
 import Header from "../components/layout/Header";
 
 const url = (name, wrap = false) =>
@@ -26,12 +25,6 @@ const Id = () => {
   const onMouseLeave = (e) => {
     document.getElementById("earth_background-text").style.display = "none";
   };
-
-  useEffect(() => {
-    if (fullExperience) {
-      plyr?.current?.plyr.play();
-    }
-  }, [plyr, fullExperience]);
   return (
     <div>
       <Head>

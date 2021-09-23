@@ -1,15 +1,10 @@
-import Plyr from "plyr-react";
+import { Grid } from "@material-ui/core";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
+import Link from "next/link";
+import "plyr-react/dist/plyr.css";
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import "plyr-react/dist/plyr.css";
-import { Grid } from "@material-ui/core";
-import Image from "next/image";
-import ReactTypingEffect from "react-typing-effect";
-import { motion } from "framer-motion";
 
-import Link from "next/link";
 
 const url = (name, wrap = false) =>
   `${
@@ -39,7 +34,6 @@ const Pricing = () => {
   }, [plyr, fullExperience]);
 
   return (
-    <Layout title="Pricing">
       <div
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
@@ -180,25 +174,6 @@ const Pricing = () => {
           </div>
         </Parallax>
       </div>
-      {/* <div className="audio-player">
-        <Plyr
-          source={{
-            type: "audio",
-            sources: [
-              {
-                src: "/audio.mp3",
-                type: "audio/mp3",
-              },
-            ],
-          }}
-          options={{
-            controls: ["play", "mute", "volume"],
-            loop: { active: true },
-          }}
-          ref={plyr}
-        />
-      </div> */}
-    </Layout>
   );
 };
 
