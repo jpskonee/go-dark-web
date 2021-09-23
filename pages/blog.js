@@ -12,7 +12,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 //Contentful Blog Post
 import { createClient } from "contentful";
-import MusicPlayer from "../components/layout/MusicPlayer";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -49,10 +48,6 @@ const url = (name, wrap = false) =>
   }`;
 
 const BlogHome = ({ blogPosts, posts }) => {
-  const { fullExperience } = useSelector((state) => state.settings);
-  const parallax = useRef(null);
-  const plyr = useRef(null);
-
   const classNamees = useStyles();
 
   return (
