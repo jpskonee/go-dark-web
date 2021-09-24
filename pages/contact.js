@@ -43,10 +43,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_91oi55k",
+        process.env.EMAILJS_SERVICE_ID,
         "godark_contact",
         e.target,
-        "user_6Io0epZuyvPn4xxAFJvaN"
+        process.env.EMAILJS_API_KEY
       )
       .then(
         (result) => {

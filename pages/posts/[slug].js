@@ -75,9 +75,10 @@ const SinglePost = ({ blogPosts }) => {
               container
               className="singleBlogInner"
             >
-              <Image
+              <img
                 src={`https://${bannerImage.fields.file.url}`}
-                layout="fill"
+                width="100%"
+                height="100%"
               />
               <Grid item className="singleBlogTextDiv">
                 <div className="singleBlogText">{title}</div>
