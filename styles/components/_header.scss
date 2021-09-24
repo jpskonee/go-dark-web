@@ -28,7 +28,7 @@ $black: #030303;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    // padding: 0rem 1rem;
+    padding: 0rem 1rem;
 
     @media screen and (max-width: 1050px) {
       // width: 60%;
@@ -36,7 +36,7 @@ $black: #030303;
   }
 
   .menu-item {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     padding: 0.5rem 0.5rem;
   }
 
@@ -55,6 +55,7 @@ $black: #030303;
   padding: 1rem 1rem;
   text-align: center;
   border-radius: 5px;
+  margin-right: 20rem;
   background: $red;
 }
 .contactDiv:hover {

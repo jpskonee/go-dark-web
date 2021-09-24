@@ -36,7 +36,7 @@ const Header = () => {
     <div>
       <div className="headerAll">
         {" "}
-        <Grid container className="header ">
+        <Grid container className="header">
           <Grid item md={3}></Grid>
           <Grid item md={6} className="menubar">
             <div className="menu-item">
