@@ -53,7 +53,10 @@ const Layout = ({ title, children }) => {
                   ry="3"
                 />
               </svg>
-              <h1 className="experience__modal-title">
+              <h1
+                style={{ lineHeight: "3rem" }}
+                className="experience__modal-title"
+              >
                 Do you want the full experience?
               </h1>
               <div className="experience__modal-buttons">
