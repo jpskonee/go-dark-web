@@ -3,13 +3,14 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: center;
-  margin: 1rem auto 0rem;
+  margin: 4rem auto 0rem;
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -22,17 +23,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://www.theindianwire.com/wp-content/uploads/2020/06/ethical-hacking.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     box-shadow: 0 5px 30px 1px;
     width: 92%;
     position: relative;
     padding: 1rem 1rem 0rem;
     height: 600px;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 1050px) {
       width: 98%;
     }
 
@@ -42,6 +39,7 @@
       width: 80%;
       display: flex;
       justify-content: center;
+      position: absolute;
 
       @media screen and (min-width: 600px) and (max-width: 770px) {
         margin: 0;
@@ -72,13 +70,14 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: center;
-  margin: 6rem auto 6rem;
+  margin: 6rem auto;
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -95,7 +94,8 @@
     width: 92%;
     position: relative;
     padding: 1rem 0.5rem 1rem;
-    @media screen and (max-width: 450px) {
+
+    @media screen and (max-width: 1050px) {
       width: 98%;
     }
 
@@ -106,11 +106,10 @@
       color: black;
       font-family: Arial !important;
       font-size: 1rem;
+      margin-left: 2rem;
 
-      @media screen and (min-width: 600px) and (max-width: 770px) {
-      }
-
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 1050px) {
+        padding: 1.5rem auto;
       }
 
       .postImage {
@@ -124,6 +123,7 @@
       }
       .postTextDiv {
         margin-top: 0.5rem;
+
         @media screen and (min-width: 600px) and (max-width: 770px) {
         }
 

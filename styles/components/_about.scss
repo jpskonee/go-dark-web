@@ -7,9 +7,10 @@
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
-    margin-top: 2rem;
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
+    margin-top: 1rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -33,7 +34,8 @@
     padding: 1rem 1rem 0rem;
     height: 600px;
 
-    @media screen and (min-width: 600px) and (max-width: 770px) {
+    @media screen and (min-width: 600px) and (max-width: 1050px) {
+      width: 98%;
     }
 
     @media screen and (max-width: 450px) {
@@ -41,8 +43,6 @@
     }
 
     .bannerTextDiv {
-      margin-top: 25rem;
-      margin-left: 30rem;
       transform: rotate(1deg);
 
       @media screen and (min-width: 600px) and (max-width: 770px) {
@@ -78,9 +78,10 @@
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 1rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -97,10 +98,11 @@
     width: 92%;
     box-shadow: 0 5px 30px 1px;
     padding: 1rem 1rem 0rem;
-    @media screen and (min-width: 600px) and (max-width: 770px) {
+
+    @media screen and (min-width: 600px) and (max-width: 1050px) {
       margin-top: 2rem;
       padding: 0 0 1rem;
-      width: 100%;
+      width: 98%;
     }
 
     @media screen and (max-width: 450px) {
@@ -173,8 +175,8 @@
     }
 
     .topicDiv {
-      margin: 2rem;
-      padding: 1rem 2rem;
+      margin: 1rem;
+      padding: 1rem 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -194,6 +196,7 @@
         justify-self: center;
         align-items: center;
         margin: 3rem 0;
+        border-radius: 100%;
       }
 
       .topicText {
@@ -213,7 +216,4 @@
       }
     }
   }
-}
-
-.footerDiv {
 }

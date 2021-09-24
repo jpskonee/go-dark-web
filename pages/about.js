@@ -4,6 +4,7 @@ import "plyr-react/dist/plyr.css";
 import ReactTypingEffect from "react-typing-effect";
 import Head from "next/head";
 import Footer from "../components/layout/Footer";
+import FooterMenu from "../components/layout/FooterMenu";
 
 const url = (name, wrap = false) =>
   `${
@@ -36,7 +37,7 @@ const About = () => {
           <Grid item className="bannerTextDiv">
             <ReactTypingEffect
               className="bannerText"
-              text={["About Us", "Go Dark"]}
+              text={["About Us", "About"]}
             />
           </Grid>
         </Grid>
@@ -77,7 +78,7 @@ const About = () => {
             <Grid className="focusItem" item md={4}>
               <Image
                 src="/osint1.gif"
-                width={300}
+                width={250}
                 height={150}
                 className="focusImg"
               />
@@ -119,7 +120,7 @@ const About = () => {
           </Grid>
           <Grid container item md={12} sm={12} xs={12} className="topicDiv">
             <Grid md={5} sm={12} xs={12} item className="topicImage">
-              <Image src="/lock.gif" width={450} height={400} />
+              <Image src="/lock.gif" width={400} height={350} />
             </Grid>
             <Grid item md={7} sm={12} xs={12} className="topicText">
               You also have a right to seek to control that information for such
@@ -132,7 +133,7 @@ const About = () => {
           </Grid>
         </Grid>
       </div>
-      <Footer />
+      <FooterMenu />
     </div>
   );
 };

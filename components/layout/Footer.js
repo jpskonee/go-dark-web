@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import PinDropIcon from "@material-ui/icons/PinDrop";
 import { motion } from "framer-motion";
+import FooterMenu from "./FooterMenu";
 
 const Footer = () => {
   const [hover, setHover] = useState(false);
@@ -30,7 +31,7 @@ const Footer = () => {
           >
             <Link href="/contact">
               <a>
-                <Image src="/blue-earth.gif" width={400} height={400} alt="" />
+                <Image src="/globeRed.gif" width={350} height={350} alt="" />
               </a>
             </Link>
           </div>
@@ -38,7 +39,7 @@ const Footer = () => {
             <motion.div
               // id="earth-text-id"
               initial={{ x: -300, opacity: 0 }}
-              animate={{ x: -50, opacity: 1 }}
+              animate={{ x: -10, opacity: 1 }}
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -57,48 +58,7 @@ const Footer = () => {
             </motion.div>
           )}
         </Grid>
-        <Grid className="logoMenuDiv" item md={12} container>
-          <Grid item md={4}>
-            <Link href="/">
-              <a>
-                <Image
-                  src="/skull.gif"
-                  alt="GoDark Icon"
-                  width={120}
-                  height={120}
-                />
-              </a>
-            </Link>
-          </Grid>
-          <Grid item md={8} className="menubar">
-            <div className="menu-item">
-              <Link href="/">
-                <a> Home </a>
-              </Link>
-            </div>
-            <div className="menu-item">
-              <Link href="/about">
-                <a>About</a>
-              </Link>
-            </div>
-
-            <div className="menu-item">
-              <Link href="/pricing">
-                <a>Pricing</a>
-              </Link>
-            </div>
-            <div className="menu-item">
-              <Link href="/blog">
-                <a>Blog</a>
-              </Link>
-            </div>
-            <div className="contactDiv">
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
-            </div>
-          </Grid>
-        </Grid>
+        <FooterMenu />
       </Grid>
     </div>
   );

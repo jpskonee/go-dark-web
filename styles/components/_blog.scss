@@ -7,9 +7,10 @@
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -32,7 +33,7 @@
     padding: 1rem 1rem 0rem;
     height: 600px;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 1050px) {
       width: 98%;
     }
 
@@ -67,13 +68,14 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: center;
-  margin: 6rem auto 6rem;
+  margin: 6rem auto 2rem;
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -91,7 +93,7 @@
     position: relative;
     padding: 3rem 1rem 3rem;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 1050px) {
       width: 98%;
     }
 
@@ -175,10 +177,9 @@
         }
 
         .postReadMoreBtn {
-          background: red;
+          background: grey;
           padding: 0.3rem;
           font-family: "Times New Roman", Times, serif;
-          margin-left: 1.5rem;
           @media screen and (min-width: 600px) and (max-width: 770px) {
           }
 
@@ -196,7 +197,7 @@
           font-size: 0.8rem;
           font-family: "Times New Roman", Times, serif;
           text-align: right;
-          background: rgb(92, 89, 89);
+          background: $red;
           padding: 0.3rem;
           width: fit-content;
           @media screen and (min-width: 600px) and (max-width: 770px) {

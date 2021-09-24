@@ -8,6 +8,7 @@ import { useRef } from "react";
 import Footer from "../components/layout/Footer";
 import GoogleMap from "../components/shared/GoogleMap";
 import Head from "next/head";
+import FooterMenu from "../components/layout/FooterMenu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,7 +58,7 @@ const Contact = () => {
 
         <div className="formMain">
           <Grid className="formInner" container>
-            <Grid item md={6} xs={12} className="textPart">
+            <Grid item md={5} xs={12} className="textPart">
               <div className="textPartH">Contact Us</div>
               <div className="textPartB">
                 <div> We are hackers, </div>
@@ -65,6 +66,7 @@ const Contact = () => {
                 <div> We are here to help protect you. </div>
               </div>
             </Grid>
+            <Grid md={1} />
             <Grid item md={6} xs={12}>
               <form
                 style={{
@@ -119,9 +121,9 @@ const Contact = () => {
                 </div>
               </form>
             </Grid>
+            <FooterMenu />
           </Grid>
         </div>
-        {/* <Footer /> */}
       </div>
     </>
   );

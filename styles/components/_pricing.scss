@@ -13,9 +13,10 @@ $bgfontcolor: #ffffff;
   width: 95%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -38,7 +39,7 @@ $bgfontcolor: #ffffff;
     padding: 1rem 1rem 0rem;
     height: 600px;
 
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 1050px) {
       width: 98%;
     }
 
@@ -74,12 +75,13 @@ $bgfontcolor: #ffffff;
   justify-content: stretch;
   align-items: center;
   margin: 40rem auto 0rem;
-  width: 95%;
+  width: 92%;
   position: relative;
 
-  @media screen and (min-width: 600px) and (max-width: 770px) {
+  @media screen and (min-width: 600px) and (max-width: 1050px) {
     margin-top: 2rem;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   @media screen and (max-width: 450px) {
@@ -96,13 +98,14 @@ $bgfontcolor: #ffffff;
     background-size: cover;
     background-attachment: fixed;
     box-shadow: 0 5px 30px 1px;
-    width: 92%;
-    padding: 6rem 1rem;
+    width: 88%;
+    padding: 6rem auto;
     margin-top: 6rem;
 
-    @media screen and (min-width: 600px) and (max-width: 770px) {
+    @media screen and (min-width: 600px) and (max-width: 1050px) {
       margin-top: 2rem;
-      padding: 2rem 1rem;
+      padding: 2rem 0;
+      width: 98%;
     }
 
     @media screen and (max-width: 450px) {
@@ -119,6 +122,7 @@ $bgfontcolor: #ffffff;
   font-family: Alpharush;
   line-height: 2rem;
   font-size: 0.9rem;
+  width: 100%;
 
   & > &-title {
     text-align: center;
@@ -147,8 +151,8 @@ $bgfontcolor: #ffffff;
 
   &-firstTable {
     list-style: none;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
     text-align: center;
 
     &_table {
@@ -325,14 +329,13 @@ $bgfontcolor: #ffffff;
 
       &__options {
         list-style: none;
-        padding: 15px;
-        font-size: 1rem;
+        font-size: 1.2rem;
         border-bottom: 2px solid #ebedec;
         background-color: white;
         color: black;
 
         @media screen and (max-width: 1068px) {
-          font-size: 0.85em;
+          font-size: 1em;
         }
 
         @media screen and (max-width: 767px) {

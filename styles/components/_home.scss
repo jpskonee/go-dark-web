@@ -32,7 +32,7 @@ $black: #030303;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-    margin: 0.5rem 0 0 2rem;
+    margin: 0.5rem 0 0;
     position: relative;
 
     @media screen and (min-width: 600px) and (max-width: 770px) {
@@ -52,13 +52,10 @@ $black: #030303;
     margin-top: 1rem;
     position: relative;
     box-shadow: 0 5px 30px 1px;
-    padding: 1rem 3rem;
+    padding: 1rem 0rem 1rem 3rem;
 
-    @media screen and (max-width: 600px) {
-      padding: 1rem 0.5rem;
-    }
-
-    @media screen and (max-width: 450px) {
+    @media screen and (max-width: 1024px) {
+      padding: 1rem 0 1rem 1rem;
       width: 98%;
     }
   }
@@ -77,6 +74,11 @@ $black: #030303;
       margin: 2rem 0 3.5rem;
       width: 80%;
 
+      @media screen and (max-width: 1050px) {
+        font-size: 1rem;
+        margin-top: 1rem;
+        z-index: 10;
+      }
       @media screen and (max-width: 770px) {
         text-align: center;
         margin: 2rem 0 3rem;
@@ -87,17 +89,21 @@ $black: #030303;
 
     .headerBtn {
       border: solid 2px $white;
-      padding: 1rem 3rem;
+      padding: 0.7rem 1rem;
       font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
       font-weight: bolder;
-      width: 15rem;
+      width: 13rem;
       text-transform: uppercase;
       position: absolute;
-      bottom: 3rem;
+      bottom: 2rem;
       z-index: 10;
       background-color: $red !important;
       border-radius: 5px;
 
+      @media screen and (max-width: 1050px) {
+        margin: 2rem auto 0;
+        font-size: 1.3rem;
+      }
       @media screen and (min-width: 600px) and (max-width: 770px) {
         width: 12rem;
         padding: 1rem 1.5rem;
@@ -110,10 +116,11 @@ $black: #030303;
 
       @media screen and (max-width: 430px) {
         position: absolute;
-        width: 30vw;
+        width: 35vw;
         padding: 0.4rem 0.4rem;
         bottom: -2vw;
         left: 32vw;
+        font-size: 1rem;
       }
     }
     .headerBtn:hover {
@@ -148,8 +155,7 @@ $black: #030303;
 
   .headerHacker {
     position: absolute;
-    bottom: -7rem;
-    z-index: 2;
+    bottom: -2rem;
 
     @media screen and (max-width: 430px) {
       position: absolute;
@@ -163,8 +169,8 @@ $black: #030303;
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: 770px) {
-      margin: 20vw auto;
+    @media screen and (max-width: 1050px) {
+      margin: 10vw auto;
     }
 
     .functioninner {
@@ -174,7 +180,7 @@ $black: #030303;
       box-shadow: 0 5px 30px 1px;
       padding-top: 2.5rem;
 
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 1024px) {
         width: 98%;
       }
     }
@@ -200,6 +206,9 @@ $black: #030303;
       animation: glitch-skew 1s infinite linear alternate-reverse;
       margin: 2rem 4rem 1rem;
 
+      @media screen and (max-width: 1050px) {
+        font-size: 3.5rem;
+      }
       @media screen and (max-width: 770px) {
         text-align: center;
       }

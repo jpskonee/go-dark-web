@@ -37,15 +37,15 @@ const Header = () => {
       <div className="headerAll">
         {" "}
         <Grid container className="header ">
-          <Grid item lg={3}></Grid>
-          <Grid item lg={6} className="menubar">
+          <Grid item md={3}></Grid>
+          <Grid item md={6} className="menubar">
             <div className="menu-item">
               <Link href="/">
                 <a> Home </a>
               </Link>
             </div>
             <div className="menu-item">
-              <Link href="/about" >
+              <Link href="/about">
                 <a>About</a>
               </Link>
             </div>
@@ -90,10 +90,11 @@ const Header = () => {
               </Link>
             </div>
           </Grid>
-          <Grid item sm={1} lg={2}></Grid>
-          <Grid className="contactDiv" item lg={1}>
+          {/* <Grid item md={2}></Grid> */}
+          <Grid item lg={2} md={1}></Grid>
+          <Grid item lg={1} md={2}>
             <Link href="/contact">
-              <a>Contact</a>
+              <a className="contactDiv">Contact</a>
             </Link>
           </Grid>
         </Grid>{" "}

@@ -27,7 +27,6 @@ const Layout = ({ title, children }) => {
     <div className="layout">
       <Head>
         <title>{title} - GoDark</title>
-
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {loading ? (

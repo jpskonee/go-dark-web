@@ -6,12 +6,14 @@ import { useSelector } from "react-redux";
 import "plyr-react/dist/plyr.css";
 import Link from "next/link";
 import { Grid } from "@material-ui/core";
+import ReactTypingEffect from "react-typing-effect";
 import Image from "next/image";
 import Head from "next/head";
 import { makeStyles } from "@material-ui/core/styles";
 
 //Contentful Blog Post
 import { createClient } from "contentful";
+import FooterMenu from "../components/layout/FooterMenu";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -72,25 +74,24 @@ const BlogHome = ({ blogPosts, posts }) => {
             className="blogInner"
           >
             <Grid item className="blogTextDiv">
-              <div className="blogText" text={["Pricing", "Go Dark"]}>
-                {" "}
-                Blog{" "}
-              </div>
+              <ReactTypingEffect className="blogText" text={["Blog", "Blog"]} />
             </Grid>
           </Grid>
         </div>
 
-        <div style={{ marginBottom: "12rem" }} className="postMain">
+        <div className="postMain">
           <Grid container className="postInner">
             {/* mappibg through post */}
 
             {blogPosts.map((post) => (
               <Grid key={post.sys.id} item md={5} xs={12} className="postDiv">
-                <img
-                  className="postImage"
-                  src={`${post.fields.Thumbnail.fields.file.url}`}
-                  style={{ width: "100%" }}
-                />
+                <Link href={`/posts/${post.fields.slug}`}>
+                  <img
+                    className="postImage"
+                    src={`${post.fields.Thumbnail.fields.file.url}`}
+                    style={{ width: "100%" }}
+                  />
+                </Link>
                 <div className="postTextDiv">
                   <div className="postCatDiv">
                     <div className="postCat">
@@ -98,14 +99,13 @@ const BlogHome = ({ blogPosts, posts }) => {
                       <span className="postDate">{post.sys.createdAt}</span>
                     </div>
                   </div>
-                  <div className="postTitle">{post.fields.title}</div>
+                  <Link href={`/posts/${post.fields.slug}`}>
+                    <div className="postTitle">{post.fields.title}</div>
+                  </Link>
                   <div className="postMsg">
                     {/* {post.fields.post} */}
-                    <Link
-                      className="postReadMoreBtn"
-                      href={`/posts/${post.fields.slug}`}
-                    >
-                      <a>Read More</a>
+                    <Link href={`/posts/${post.fields.slug}`}>
+                      <a className="postReadMoreBtn">Read</a>
                     </Link>
                   </div>
                   <div id="postAuthorDiv">
@@ -116,6 +116,7 @@ const BlogHome = ({ blogPosts, posts }) => {
             ))}
           </Grid>
         </div>
+        <FooterMenu />
       </div>
     </>
   );

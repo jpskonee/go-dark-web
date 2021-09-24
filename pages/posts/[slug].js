@@ -10,6 +10,7 @@ import Layout from "../../components/layout/Layout";
 //Contentful Blog Post path
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import FooterMenu from "../../components/layout/FooterMenu";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -57,7 +58,6 @@ const SinglePost = ({ blogPosts }) => {
     slug,
   } = blogPosts.fields;
 
-  console.log("p.blog");
   return (
     <>
       <div
@@ -65,7 +65,7 @@ const SinglePost = ({ blogPosts }) => {
         style={{ width: "100%", height: "100%", background: "#020205" }}
       >
         <div>
-          <div className="singleBlogMain">
+          <div sty className="singleBlogMain">
             <Grid
               style={{
                 display: "flex",
@@ -75,14 +75,16 @@ const SinglePost = ({ blogPosts }) => {
               container
               className="singleBlogInner"
             >
+              <Image
+                src={`https://${bannerImage.fields.file.url}`}
+                layout="fill"
+              />
               <Grid item className="singleBlogTextDiv">
-                <div className="singleBlogText" text={["Pricing", "Go Dark"]}>
-                  {title}
-                </div>
+                <div className="singleBlogText">{title}</div>
               </Grid>
             </Grid>
           </div>
-          <div style={{ marginBottom: "12rem" }} className="singlePostMain">
+          <div className="singlePostMain">
             <Grid container className="singlePostInner">
               {/* <div className="singlePostImage">
                 <Image
@@ -107,7 +109,7 @@ const SinglePost = ({ blogPosts }) => {
             </Grid>
           </div>
         </div>
-        {/* <Footer /> */}
+        <FooterMenu />
       </div>
     </>
   );

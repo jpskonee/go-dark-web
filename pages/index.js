@@ -3,6 +3,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 import "plyr-react/dist/plyr.css";
 import { useRef } from "react";
 import ReactTypingEffect from "react-typing-effect";
@@ -48,23 +49,29 @@ const Home = () => {
                 helping you to disappear. When you want to know, we'll find it.
                 <br /> When you want to go dark, <br /> we're here.
               </div>
-              <div className="headerBtn">
-                {" "}
-                <ReactTypingEffect
-                  text={["Explore", "Disappear", "Discover"]}
-                />{" "}
-              </div>
+              <Link href="/about">
+                <div className="headerBtn">
+                  <ReactTypingEffect
+                    text={["Explore", "Disappear", "Discover"]}
+                  />
+                </div>
+              </Link>
             </Grid>
-            <Grid item md={6} xs={12} className="headerImage">
-              <Image src="/wheel.png" width={600} height={500} />
+            <Grid item md={6} xs={12}>
+              <Image
+                className="headerImage"
+                src="/wheel.png"
+                width={600}
+                height={500}
+              />
             </Grid>
           </Grid>
           <div className="headerHacker">
-            <Image src="/figHacker.png" width={800} height={600} />
+            <Image src="/figHacker.png" width={400} height={400} />
           </div>
         </span>
       </div>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <div>
         <span data-text="GO DARK" className="functionMain">
           <Grid className="functioninner" container>
             <Grid item md={5}>
@@ -84,7 +91,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </span>
-      </motion.div>
+      </div>
       <Footer />
     </div>
   );

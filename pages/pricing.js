@@ -1,10 +1,13 @@
-import { Grid } from "@material-ui/core";
+import { Collapse, Grid } from "@material-ui/core";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Link from "next/link";
 import "plyr-react/dist/plyr.css";
 import { useEffect, useRef } from "react";
 import Head from "next/head";
 import { useSelector } from "react-redux";
+import FooterMenu from "../components/layout/FooterMenu";
+import CollapseDesp from "../components/shared/CollapseDesp";
+import ReactTypingEffect from "react-typing-effect";
 
 const url = (name, wrap = false) =>
   `${
@@ -47,10 +50,10 @@ const Pricing = () => {
       <div className="priceMain">
         <Grid container className="priceInner">
           <Grid item className="priceTextDiv">
-            <div className="priceText" text={["Pricing", "Go Dark"]}>
-              {" "}
-              Pricing{" "}
-            </div>
+            <ReactTypingEffect
+              className="priceText"
+              text={["Pricing", "Pricing"]}
+            />
           </Grid>
         </Grid>
       </div>
@@ -148,6 +151,7 @@ const Pricing = () => {
           </Grid>
         </div>
       </div>
+      <FooterMenu />
     </div>
   );
 };

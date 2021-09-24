@@ -1,5 +1,18 @@
 import React from "react";
 import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  mapDiv: {
+    height: "94vh",
+    width: "97vw",
+
+    [theme.breakpoints.only("lg")]: {
+      height: "98vh",
+      width: "86vw",
+    },
+  },
+}));
 
 const mapKey = "AIzaSyBcxIDwLZ-FTidTXfhbVVRlhWvGGBxtYW0";
 
@@ -15,8 +28,10 @@ function Map() {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export default function GoogleMaps() {
+  const classes = useStyles();
+
   return (
-    <div style={{ height: "78vh", width: "85vw" }}>
+    <div className={classes.mapDiv}>
       <WrappedMap
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${mapKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
