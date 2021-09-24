@@ -9,6 +9,7 @@ import Footer from "../components/layout/Footer";
 import GoogleMap from "../components/shared/GoogleMap";
 import Head from "next/head";
 import FooterMenu from "../components/layout/FooterMenu";
+import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +35,32 @@ const Contact = () => {
 
   const classNamees = useStyles();
 
-  console.log("contact");
+  //sending email
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_91oi55k",
+        "godark_contact",
+        e.target,
+        "user_6Io0epZuyvPn4xxAFJvaN"
+      )
+      .then(
+        (result) => {
+          if (result.text === "OK") {
+            alert("Email sent Successfully!");
+          }
+        },
+        (error) => {
+          alert("An Error Occured, Please Try Again");
+          console.log(error.text);
+        }
+      );
+    // e.target.reset();
+  };
 
   return (
     <>
@@ -77,30 +103,40 @@ const Contact = () => {
                 className={`${classNamees.root} formPart`}
                 noValidate
                 autoComplete="off"
+                ref={form}
+                onSubmit={sendEmail}
               >
                 <TextField
                   id="outlined-basic"
                   label="Full Name"
                   variant="outlined"
                   fullWidth={true}
+                  name="name"
+                  required
                 />
                 <TextField
                   id="outlined-basic"
                   label="Email"
                   variant="outlined"
                   fullWidth={true}
+                  name="email"
+                  required
                 />
                 <TextField
                   id="outlined-basic"
                   label="Subject"
                   variant="outlined"
                   fullWidth={true}
+                  name="subject"
+                  required
                 />
                 <TextField
                   id="outlined-basic"
                   label="Message"
                   variant="outlined"
                   fullWidth={true}
+                  name="message"
+                  required
                 />
 
                 <div
@@ -115,15 +151,16 @@ const Contact = () => {
                       fontSize: "1.2rem",
                     }}
                     variant="outlined"
+                    type="submit"
                   >
                     Send
                   </Button>
                 </div>
               </form>
             </Grid>
-            <FooterMenu />
           </Grid>
         </div>
+        <FooterMenu />
       </div>
     </>
   );

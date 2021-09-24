@@ -16,6 +16,12 @@ const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [dropDown, setDropDown] = useState(false);
 
+  const toggleDropDown = () => {
+    setTimeout(() => {
+      setDropDown(!dropDown);
+    }, 1000);
+  };
+
   function toggleBodyclassName(className) {
     document.body.classList.toggle(className);
   }
@@ -135,30 +141,29 @@ const Header = () => {
           initial={{ y: 500 }}
           animate={{ y: -300 }}
           transition={{ duration: 3, delay: 2 }}
-          style={{ background: "black" }}
           className="dropDown"
         >
-          <div className="menu-item">
+          <div onClick={toggleDropDown} className="menu-item">
             <Link href="/">
               <a> Home </a>
             </Link>
           </div>
-          <div className="menu-item">
+          <div onClick={toggleDropDown} className="menu-item">
             <Link href="/about">
               <a>About</a>
             </Link>
           </div>
-          <div className="menu-item">
+          <div onClick={toggleDropDown} className="menu-item">
             <Link href="/pricing">
               <a>Pricing</a>
             </Link>
           </div>
-          <div className="menu-item">
+          <div onClick={toggleDropDown} className="menu-item">
             <Link href="/blog">
               <a>Blog</a>
             </Link>
           </div>
-          <div>
+          <div onClick={toggleDropDown}>
             <Link href="/contact">
               <a>Contact</a>
             </Link>

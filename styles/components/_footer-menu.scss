@@ -1,35 +1,16 @@
-.footerlogo {
-  margin-top: 1rem;
-}
-
 .logoMenuDiv {
-  border-top: 1px groove $red;
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .menubar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  @media screen and (max-width: 450px) {
-    visibility: hidden;
-  }
-}
-
-.menu-item {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-}
-
-.menu-item:active {
-  background: $red;
-}
-.menu-item:hover {
-  animation: glitch-skew 1s infinite linear alternate-reverse;
-  box-shadow: 0 5px 30px 1px $red;
-  border-radius: 20px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  font-size: 0.8rem;
 }

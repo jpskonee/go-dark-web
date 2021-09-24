@@ -9,18 +9,19 @@ $bgfontcolor: #ffffff;
   flex-direction: column;
   justify-content: stretch;
   align-items: center;
-  margin: 1rem auto 0rem;
+  margin: 6.5rem auto 0rem;
   width: 95%;
   position: relative;
 
   @media screen and (min-width: 600px) and (max-width: 1050px) {
-    margin-top: 2rem;
     padding-bottom: 2rem;
     width: 100%;
   }
-
+  @media screen and (min-width: 600px) and (max-width: 770px) {
+    margin: 6rem 0 0;
+  }
   @media screen and (max-width: 450px) {
-    margin-top: 1vw !important;
+    margin-top: 6rem;
     padding-bottom: 2rem;
     width: 100%;
   }
@@ -99,7 +100,7 @@ $bgfontcolor: #ffffff;
     background-attachment: fixed;
     box-shadow: 0 5px 30px 1px;
     width: 88%;
-    padding: 6rem auto;
+    padding-top: 3rem;
     margin-top: 6rem;
 
     @media screen and (min-width: 600px) and (max-width: 1050px) {
@@ -110,7 +111,7 @@ $bgfontcolor: #ffffff;
 
     @media screen and (max-width: 450px) {
       margin-top: 1vw !important;
-      padding: 2rem auto;
+      padding: 4rem auto;
       width: 98%;
     }
   }

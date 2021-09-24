@@ -115,8 +115,8 @@ const BlogHome = ({ blogPosts, posts }) => {
               </Grid>
             ))}
           </Grid>
+          <FooterMenu />
         </div>
-        <FooterMenu />
       </div>
     </>
   );

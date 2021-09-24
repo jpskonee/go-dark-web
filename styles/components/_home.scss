@@ -32,15 +32,15 @@ $black: #030303;
     flex-direction: column;
     justify-content: stretch;
     align-items: center;
-    margin: 0.5rem 0 0;
+    margin: 6rem 0 0;
     position: relative;
 
     @media screen and (min-width: 600px) and (max-width: 770px) {
-      margin: 0.1rem 0;
+      margin: 5rem 0 0;
     }
 
     @media screen and (max-width: 450px) {
-      margin: 0rem 0;
+      margin: 5rem 0 0;
     }
   }
 

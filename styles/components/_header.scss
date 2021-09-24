@@ -69,7 +69,11 @@ $black: #030303;
   align-items: center;
   background: $black !important;
   visibility: hidden;
-  background: white;
+  background: black;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
 
   @media screen and (max-width: 800px) {
     visibility: visible;
@@ -77,9 +81,9 @@ $black: #030303;
 }
 
 .dropDown {
-  top: 5.5rem;
+  top: 6rem;
   left: 3rem;
-  position: absolute;
+  position: fixed;
   font-size: 1.8rem;
   margin: 0.5rem auto;
   padding: 2rem 0;
@@ -91,7 +95,7 @@ $black: #030303;
   border: white 1px solid;
   width: 80%;
   background: black;
-  z-index: 999;
+  z-index: 950;
 }
 
 //old style

@@ -9,6 +9,7 @@ import { useRef } from "react";
 import ReactTypingEffect from "react-typing-effect";
 import Footer from "../components/layout/Footer";
 import Terminal from "../components/shared/Terminal";
+import FooterMenu from "../components/layout/FooterMenu";
 
 const url = (name, wrap = false) =>
   `${
@@ -33,8 +34,7 @@ const Home = () => {
     >
       {" "}
       <Head>
-        <title>Home - GoDark</title>
-
+        <title> Home - GoDark</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
@@ -93,6 +93,7 @@ const Home = () => {
         </span>
       </div>
       <Footer />
+      <FooterMenu />
     </div>
   );
 };

@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: center;
-  margin: 12rem 0 0rem;
-  width: 95%;
+  margin: 12rem auto 0rem;
+  width: 96%;
   position: relative;
 
   @media screen and (max-width: 1024px) {
@@ -28,7 +28,8 @@
     width: 92%;
     position: relative;
     box-shadow: 0 5px 30px 1px;
-    padding: 1rem 1rem 0rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
 
     @media screen and (max-width: 1024px) {
       width: 98%;

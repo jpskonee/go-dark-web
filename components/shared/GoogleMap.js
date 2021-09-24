@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     width: "97vw",
 
     [theme.breakpoints.only("lg")]: {
-      height: "98vh",
+      height: "76vh",
       width: "86vw",
     },
   },

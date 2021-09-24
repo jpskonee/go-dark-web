@@ -6,47 +6,14 @@ import PinDropIcon from "@material-ui/icons/PinDrop";
 import { motion } from "framer-motion";
 
 function FooterMenu() {
+  const year = new Date().getFullYear();
+
+  console.log(year);
+
   return (
     <Grid className="logoMenuDiv" item md={12} container>
-      <Grid item md={4}>
-        <Link href="/">
-          <a>
-            <Image
-              src="/skull.gif"
-              alt="GoDark Icon"
-              width={120}
-              height={120}
-            />
-          </a>
-        </Link>
-      </Grid>
-      <Grid item md={8} className="menubar">
-        <div className="menu-item">
-          <Link href="/">
-            <a> Home </a>
-          </Link>
-        </div>
-        <div className="menu-item">
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </div>
-
-        <div className="menu-item">
-          <Link href="/pricing">
-            <a>Pricing</a>
-          </Link>
-        </div>
-        <div className="menu-item">
-          <Link href="/blog">
-            <a>Blog</a>
-          </Link>
-        </div>
-        <div className="contactDiv">
-          <Link href="/contact">
-            <a>Contact</a>
-          </Link>
-        </div>
+      <Grid item md={4} className="menubar">
+        © Copyright Go-Dark {year}
       </Grid>
     </Grid>
   );

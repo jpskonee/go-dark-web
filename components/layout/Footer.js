@@ -58,7 +58,6 @@ const Footer = () => {
             </motion.div>
           )}
         </Grid>
-        <FooterMenu />
       </Grid>
     </div>
   );
