@@ -3,7 +3,7 @@ import "plyr-react/dist/plyr.css";
 import Link from "next/link";
 import { Grid } from "@material-ui/core";
 import Image from "next/image";
-import Head from "next/nead";
+import Head from "next/head";
 import Footer from "../../components/layout/Footer";
 import { motion } from "framer-motion";
 import Layout from "../../components/layout/Layout";

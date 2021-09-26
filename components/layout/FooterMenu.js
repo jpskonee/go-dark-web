@@ -20,8 +20,8 @@ function FooterMenu() {
         />
       </Head>
       <Grid className="logoMenuDiv" item md={12} container>
-        <Grid item md={6} className="menubar">
-          © Copyright Go-Dark {year}
+        <Grid style={{ lineHeight: "1.1rem" }} item md={6} className="menubar">
+          © Copyright <br /> Go-Dark {year}
         </Grid>
       </Grid>
     </div>

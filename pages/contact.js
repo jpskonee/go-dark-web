@@ -84,7 +84,7 @@ const Contact = () => {
         />
         <title>Contact - GoDark</title>
 
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/skull.png" />
       </Head>
       <div
         className="home"

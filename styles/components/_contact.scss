@@ -123,7 +123,7 @@
       }
       .textPartB {
         margin: 2rem 0;
-        margin-left: 1.5rem;
+        margin-left: 2.5rem;
         font-size: 1.5rem;
         line-height: 2rem;
         @media screen and (min-width: 600px) and (max-width: 1050px) {
@@ -134,6 +134,11 @@
         @media screen and (max-width: 770px) {
           font-size: 1.5rem;
           text-align: center;
+        }
+        @media screen and (max-width: 450px) {
+          font-size: 1.5rem;
+          text-align: center;
+          margin-left: 0;
         }
       }
     }
