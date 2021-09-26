@@ -62,12 +62,12 @@ const About = () => {
           <Grid className="focusMain" item md={12} container>
             <Grid className="focusItem" item md={4}>
               <Image
-                src="/lock.gif"
-                width={150}
+                src="/osint1.gif"
+                width={220}
                 height={150}
                 className="focusImg"
               />
-              <div className="focusText"> Operational Security (OPSEC)</div>
+              <div className="focusText"> Open Source Intelligence (OSINT)</div>
             </Grid>
             <Grid className="focusItem" item md={4}>
               <Image
@@ -83,12 +83,12 @@ const About = () => {
             </Grid>
             <Grid className="focusItem" item md={4}>
               <Image
-                src="/osint1.gif"
-                width={250}
+                src="/lock.gif"
+                width={150}
                 height={150}
                 className="focusImg"
               />
-              <div className="focusText"> Open Source Intelligence (OSINT)</div>
+              <div className="focusText"> Operational Security (OPSEC)</div>
             </Grid>
           </Grid>
         </Grid>
