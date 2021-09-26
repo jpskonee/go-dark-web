@@ -19,7 +19,7 @@ const Header = () => {
   const toggleDropDown = () => {
     setTimeout(() => {
       setDropDown(!dropDown);
-    }, 1000);
+    }, 800);
   };
 
   function toggleBodyclassName(className) {
