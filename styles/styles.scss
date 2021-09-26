@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Neototem";
-  src: local("Neototem"), url("../fonts/Neototem.woff") format("woff");
+  font-family: "Neototem" !important;
+  src: local("Neototem"), url("../fonts/Neototem.ttf") format("tff") !important;
 }
 
 * {

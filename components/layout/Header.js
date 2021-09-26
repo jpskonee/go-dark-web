@@ -167,9 +167,10 @@ const Header = () => {
             <Link href="/contact">
               <a
                 style={{
-                  background: "red",
+                  background: "#c90a17",
                   padding: ".7rem 1rem",
                   borderRadius: "0.5rem",
+                  border: "1px white solid",
                 }}
               >
                 Contact
