@@ -10,7 +10,7 @@ function FooterMenu() {
 
   return (
     <Grid className="logoMenuDiv" item md={12} container>
-      <Grid item md={4} className="menubar">
+      <Grid item md={6} className="menubar">
         © Copyright Go-Dark {year}
       </Grid>
     </Grid>

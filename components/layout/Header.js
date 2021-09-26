@@ -165,7 +165,9 @@ const Header = () => {
           </div>
           <div onClick={toggleDropDown}>
             <Link href="/contact">
-              <a>Contact</a>
+              <a style={{ background: "red", padding: "0.5rem 1rem" }}>
+                Contact
+              </a>
             </Link>
           </div>
         </animated.div>
