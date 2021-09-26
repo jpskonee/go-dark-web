@@ -1,6 +1,7 @@
 import { Grid } from "@material-ui/core";
 import Link from "next/link";
 import Image from "next/image";
+import Head from "next/head";
 import React, { useState } from "react";
 import PinDropIcon from "@material-ui/icons/PinDrop";
 import { motion } from "framer-motion";
@@ -22,6 +23,14 @@ const Footer = () => {
 
   return (
     <div className="footerDiv">
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
+      </Head>
       <Grid container className="footerinner">
         <Grid className="earth-div" item md={12}>
           <div

@@ -25,6 +25,12 @@ const Layout = ({ title, children }) => {
   return (
     <div className="layout">
       <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
         <title>{title} - GoDark</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

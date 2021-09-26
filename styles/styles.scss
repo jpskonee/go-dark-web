@@ -1,6 +1,33 @@
 @font-face {
   font-family: "Neototem" !important;
-  src: local("Neototem"), url("../fonts/Neototem.ttf") format("tff") !important;
+  src: local("Neototem"), url("../public/fonts/Neototem.ttf") format("tff") !important;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neototem" !important;
+  src: local("Neototem"), url("../public/fonts/Neototem.ttf") format("ttf") !important;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neototem" !important;
+  src: local("Neototem"), url("../public/fonts/Neototem.ttf") format("ttf") !important;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neototem" !important;
+  src: local("Neototem"), url("../public/fonts/Neototem.ttf") format("ttf") !important;
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
 }
 
 * {

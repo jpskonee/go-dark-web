@@ -6,7 +6,7 @@ import { Grid } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import { useSpring, config, animated } from "react-spring";
-
+import Head from "next/head";
 import Plyr from "plyr-react";
 import ReactAudioPlayer from "react-audio-player";
 import audio from "../../utils/Audio";
@@ -40,6 +40,14 @@ const Header = () => {
 
   return (
     <div>
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
+      </Head>
       <div className="headerAll">
         {" "}
         <Grid container className="header">

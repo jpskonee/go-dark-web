@@ -28,6 +28,12 @@ const About = () => {
       }}
     >
       <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
         <title>About- GoDark</title>
 
         <link rel="icon" href="/favicon.ico" />

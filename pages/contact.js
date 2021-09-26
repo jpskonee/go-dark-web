@@ -76,6 +76,12 @@ const Contact = () => {
     <>
       {" "}
       <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
         <title>Contact - GoDark</title>
 
         <link rel="icon" href="/favicon.ico" />

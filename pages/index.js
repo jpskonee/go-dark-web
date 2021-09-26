@@ -34,6 +34,12 @@ const Home = () => {
     >
       {" "}
       <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
         <title> Home - GoDark</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

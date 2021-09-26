@@ -3,6 +3,7 @@ import "plyr-react/dist/plyr.css";
 import Link from "next/link";
 import { Grid } from "@material-ui/core";
 import Image from "next/image";
+import Head from "next/nead";
 import Footer from "../../components/layout/Footer";
 import { motion } from "framer-motion";
 import Layout from "../../components/layout/Layout";
@@ -64,6 +65,14 @@ const SinglePost = ({ blogPosts }) => {
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
       >
+        <Head>
+          <link
+            rel="preload"
+            href="/fonts/Neototem.ttf"
+            as="font"
+            crossOrigin=""
+          />
+        </Head>
         <div>
           <div sty className="singleBlogMain">
             <Grid

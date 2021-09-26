@@ -1,10 +1,19 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
 import CountUp from "react-countup";
+import Head from "next/head";
 
 const Loading = ({ onEnd }) => {
   return (
     <div className="loading">
+      <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
+      </Head>
       <Image
         className="loading__skull"
         src="/skull.gif"

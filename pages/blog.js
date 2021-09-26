@@ -50,6 +50,12 @@ const BlogHome = ({ blogPosts, posts }) => {
   return (
     <>
       <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
         <title>Blog - GoDark</title>
 
         <link rel="icon" href="/favicon.ico" />

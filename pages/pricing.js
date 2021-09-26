@@ -43,6 +43,12 @@ const Pricing = () => {
       style={{ width: "100%", height: "100%", background: "#020205" }}
     >
       <Head>
+        <link
+          rel="preload"
+          href="/fonts/Neototem.ttf"
+          as="font"
+          crossOrigin=""
+        />
         <title>Pricing - GoDark</title>
 
         <link rel="icon" href="/favicon.ico" />
