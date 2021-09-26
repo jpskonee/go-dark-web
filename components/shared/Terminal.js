@@ -11,7 +11,7 @@ const Terminal = () => {
         "Hello there!",
         "My name is Centurion :)",
         "I find things about people on the internet.",
-        'Click <a className="terminal__link" href="/about"> here</a> to find out more!',
+        "Click  <u> here</u>  to find out more!",
       ],
       startDelay: 500,
       typeSpeed: 60,
@@ -33,7 +33,9 @@ const Terminal = () => {
       </div>
       <div className="terminal__body">
         $&nbsp;
-        <span ref={el} />
+        <Link href="/about">
+          <span style={{ cursor: "pointer" }} ref={el} />
+        </Link>
         {/*<span className="terminal__cursor" />*/}
       </div>
     </div>
@@ -41,3 +43,5 @@ const Terminal = () => {
 };
 
 export default Terminal;
+
+// 'Click <a className="terminal__link" href="/about"> here</a> to find out more!',
