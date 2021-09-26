@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "neototem";
-  src: local("neototem"), url("../fonts/Neototem.woff") format("woff");
+  font-family: "Neototem";
+  src: local("Neototem"), url("../fonts/Neototem.woff") format("woff");
 }
 
 * {
-  font-family: "neototem";
+  font-family: Neototem !important;
 }
 
 @import "abstract/variables";

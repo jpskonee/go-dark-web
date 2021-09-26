@@ -1,8 +1,3 @@
-import Plyr from "plyr-react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Layout from "../components/layout/Layout";
-import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import "plyr-react/dist/plyr.css";
 import Link from "next/link";
 import { Grid } from "@material-ui/core";

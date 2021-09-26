@@ -8,8 +8,6 @@ import { motion } from "framer-motion";
 function FooterMenu() {
   const year = new Date().getFullYear();
 
-  console.log(year);
-
   return (
     <Grid className="logoMenuDiv" item md={12} container>
       <Grid item md={4} className="menubar">

@@ -9,6 +9,7 @@ import Footer from "../components/layout/Footer";
 import GoogleMap from "../components/shared/GoogleMap";
 import Head from "next/head";
 import FooterMenu from "../components/layout/FooterMenu";
+import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
@@ -18,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
       width: "98%",
       color: "white",
     },
+  },
+  textField: {
+    color: "black",
+    padding: "0.5rem",
+    fontSize: "1rem",
+    lineHeight: "2rem",
+    fontFamily: "serif",
+    width: "100%",
   },
 }));
 
@@ -32,26 +41,26 @@ const url = (name, wrap = false) =>
 
 const Contact = () => {
   const parallax = useRef(null);
-
   const classNamees = useStyles();
 
   //sending email
   const form = useRef();
-
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        process.env.EMAILJS_SERVICE_ID,
+        `${process.env.EMAILJS_SERVICE_ID}`,
         "godark_contact",
         e.target,
-        process.env.EMAILJS_API_KEY
+        `${process.env.EMAILJS_API_KEY}`
       )
       .then(
         (result) => {
           if (result.text === "OK") {
             alert("Email sent Successfully!");
+          } else {
+            alert("Email can't be sent now, Try Again!");
           }
         },
         (error) => {
@@ -62,6 +71,7 @@ const Contact = () => {
     // e.target.reset();
   };
 
+  const classes = useStyles();
   return (
     <>
       {" "}
@@ -105,6 +115,7 @@ const Contact = () => {
                 autoComplete="off"
                 ref={form}
                 onSubmit={sendEmail}
+                method="POST"
               >
                 <TextField
                   id="outlined-basic"
@@ -113,6 +124,7 @@ const Contact = () => {
                   fullWidth={true}
                   name="name"
                   required
+                  className={classes.textField}
                 />
                 <TextField
                   id="outlined-basic"
@@ -121,6 +133,7 @@ const Contact = () => {
                   fullWidth={true}
                   name="email"
                   required
+                  className={classes.textField}
                 />
                 <TextField
                   id="outlined-basic"
@@ -129,14 +142,15 @@ const Contact = () => {
                   fullWidth={true}
                   name="subject"
                   required
+                  className={classes.textField}
                 />
-                <TextField
-                  id="outlined-basic"
-                  label="Message"
-                  variant="outlined"
-                  fullWidth={true}
+                <TextareaAutosize
+                  placeholder="Compose a message..."
                   name="message"
                   required
+                  maxRows={5}
+                  minRows={4}
+                  className={classes.textField}
                 />
 
                 <div
