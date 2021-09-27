@@ -27,9 +27,15 @@
       &-title,
       &-buttons {
         opacity: 0;
+        font-size: 1.8rem;
         position: relative;
+        text-align: center;
         animation: modalContentFadeIn 0.5s 1s cubic-bezier(0.165, 0.14, 0.44, 1)
           forwards;
+
+        @media screen and (min-width: 500px) {
+          font-size: 2.3rem;
+        }
       }
 
       &-svg {
