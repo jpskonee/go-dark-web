@@ -72,6 +72,7 @@ const SinglePost = ({ blogPosts }) => {
             as="font"
             crossOrigin=""
           />
+          <title>{title} - Go Dark</title>
         </Head>
         <div>
           <div sty className="singleBlogMain">

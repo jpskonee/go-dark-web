@@ -2,8 +2,9 @@
 debug.log
 node_modules
 .history    
-.env.local
 .next
+.env.local
+.env
 
 
 // .gitnignore

@@ -4,13 +4,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import "plyr-react/dist/plyr.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Footer from "../components/layout/Footer";
 import GoogleMap from "../components/shared/GoogleMap";
 import Head from "next/head";
 import FooterMenu from "../components/layout/FooterMenu";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import emailjs from "emailjs-com";
+import AlertModal from "../components/shared/AlertModal";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,33 +43,84 @@ const url = (name, wrap = false) =>
 const Contact = () => {
   const parallax = useRef(null);
   const classNamees = useStyles();
+  const [alert, setAlert] = useState(false);
+  const [alertMsg, setAlarmMsg] = useState({});
 
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    date: new Date().toLocaleDateString(),
+  });
+
+  const handleChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const apiKey = process.env.EMAILJS_API_KEY;
+  const servId = process.env.EMAILJS_SERVICE_ID;
+
+  console.log(process.env.REACT_APP_EMAILJS_API_KEY);
+  console.log(apiKey, servId);
   //sending email
   const form = useRef();
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs
+    //sending to google sheet
+    try {
+      const res = await fetch(`${process.env.G_SHEET}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log("google");
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+
+    //Sending to email.js
+    await emailjs
       .sendForm(
-        `${process.env.EMAILJS_SERVICE_ID}`,
+        "go_dark",
         "godark_contact",
         e.target,
-        `${process.env.EMAILJS_API_KEY}`
+        "user_6Io0epZuyvPn4xxAFJvaN"
       )
       .then(
         (result) => {
-          if (result.text === "OK") {
-            alert("Email sent Successfully!");
+          if (result.status === 200) {
+            setAlert(true);
+            setAlarmMsg({
+              header: "Successfully Sent!",
+              url: "https://websiteurl.org/wp-content/uploads/2020/10/Red-Check-Mark-Animated-Gif.gif",
+              body: "Thanks for reaching out to us, We will get in touch with you shortly.",
+            });
+            setData({});
           } else {
-            alert("Email can't be sent now, Try Again!");
+            setAlert(true);
+            setAlarmMsg({
+              header: "Message Not Sent!",
+              url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
+              body: " Please check your connection and try again",
+            });
+            console.log(result.text);
           }
         },
         (error) => {
-          alert("An Error Occured, Please Try Again");
+          setAlert(true);
+          setAlarmMsg({
+            header: "Message Not Sent!",
+            url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
+            body: " Please Try Later After some time.",
+          });
           console.log(error.text);
         }
       );
-    // e.target.reset();
   };
 
   const classes = useStyles();
@@ -110,6 +162,7 @@ const Contact = () => {
             </Grid>
             <Grid md={1} />
             <Grid item md={6} xs={12}>
+              {alert && <AlertModal setAlert={setAlert} alertMsg={alertMsg} />}
               <form
                 style={{
                   borderRadius: "1rem",
@@ -117,7 +170,6 @@ const Contact = () => {
                   margin: "3rem auto",
                 }}
                 className={`${classNamees.root} formPart`}
-                noValidate
                 autoComplete="off"
                 ref={form}
                 onSubmit={sendEmail}
@@ -129,8 +181,11 @@ const Contact = () => {
                   variant="outlined"
                   fullWidth={true}
                   name="name"
+                  type="text"
                   required
                   className={classes.textField}
+                  onChange={handleChange}
+                  value={data.name}
                 />
                 <TextField
                   id="outlined-basic"
@@ -138,8 +193,11 @@ const Contact = () => {
                   variant="outlined"
                   fullWidth={true}
                   name="email"
+                  type="email"
                   required
                   className={classes.textField}
+                  onChange={handleChange}
+                  value={data.email}
                 />
                 <TextField
                   id="outlined-basic"
@@ -147,8 +205,11 @@ const Contact = () => {
                   variant="outlined"
                   fullWidth={true}
                   name="subject"
+                  type="text"
                   required
                   className={classes.textField}
+                  onChange={handleChange}
+                  value={data.subject}
                 />
                 <TextareaAutosize
                   placeholder="Compose a message..."
@@ -157,6 +218,8 @@ const Contact = () => {
                   maxRows={5}
                   minRows={4}
                   className={classes.textField}
+                  onChange={handleChange}
+                  value={data.message}
                 />
 
                 <div

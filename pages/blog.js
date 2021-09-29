@@ -15,6 +15,9 @@ export async function getStaticProps() {
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
+
+  console.log(process.env.CONTENTFUL_ACCESS_TOKEN);
+  console.log("ok");
   const posts = await client.getEntries({ content_type: "blogPosts" });
 
   return {

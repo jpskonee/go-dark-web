@@ -1,5 +1,10 @@
 import React from "react";
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+import {
+  GoogleMap,
+  withScriptjs,
+  withGoogleMap,
+  Marker,
+} from "react-google-maps";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +26,13 @@ function Map() {
     <GoogleMap
       defaultZoom={13}
       defaultCenter={{ lat: 45.51223, lng: -122.658722 }}
-    />
+    >
+      {" "}
+      <Marker
+        position={{ lat: 45.51223, lng: -122.658722 }}
+        title="Go Dark Web"
+      />{" "}
+    </GoogleMap>
   );
 }
 
