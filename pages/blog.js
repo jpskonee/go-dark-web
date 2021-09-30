@@ -6,18 +6,20 @@ import Image from "next/image";
 import Head from "next/head";
 import { makeStyles } from "@material-ui/core/styles";
 
+//env
+const cSpaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const cAccessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+
 //Contentful Blog Post
 import { createClient } from "contentful";
 import FooterMenu from "../components/layout/FooterMenu";
 
 export async function getStaticProps() {
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    space: cSpaceId,
+    accessToken: cAccessToken,
   });
 
-  console.log(process.env.CONTENTFUL_ACCESS_TOKEN);
-  console.log("ok");
   const posts = await client.getEntries({ content_type: "blogPosts" });
 
   return {

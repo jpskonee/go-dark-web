@@ -13,6 +13,11 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import emailjs from "emailjs-com";
 import AlertModal from "../components/shared/AlertModal";
 
+//env variable
+const apiKey = process.env.NEXT_PUBLIC_EMAILJS_API_KEY;
+const servId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const gSheet = process.env.NEXT_PUBLIC_G_SHEET;
+
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -58,11 +63,6 @@ const Contact = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const apiKey = process.env.EMAILJS_API_KEY;
-  const servId = process.env.EMAILJS_SERVICE_ID;
-
-  console.log(process.env.REACT_APP_EMAILJS_API_KEY);
-  console.log(apiKey, servId);
   //sending email
   const form = useRef();
   const sendEmail = async (e) => {
@@ -70,57 +70,50 @@ const Contact = () => {
 
     //sending to google sheet
     try {
-      const res = await fetch(`${process.env.G_SHEET}`, {
+      const res = await fetch(`${gSheet}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      console.log("google");
-      console.log(res);
     } catch (error) {
       console.log(error);
     }
 
     //Sending to email.js
-    await emailjs
-      .sendForm(
-        "go_dark",
-        "godark_contact",
-        e.target,
-        "user_6Io0epZuyvPn4xxAFJvaN"
-      )
-      .then(
-        (result) => {
-          if (result.status === 200) {
-            setAlert(true);
-            setAlarmMsg({
-              header: "Successfully Sent!",
-              url: "https://websiteurl.org/wp-content/uploads/2020/10/Red-Check-Mark-Animated-Gif.gif",
-              body: "Thanks for reaching out to us, We will get in touch with you shortly.",
-            });
-            setData({});
-          } else {
-            setAlert(true);
-            setAlarmMsg({
-              header: "Message Not Sent!",
-              url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
-              body: " Please check your connection and try again",
-            });
-            console.log(result.text);
-          }
-        },
-        (error) => {
+    await emailjs.sendForm(servId, "godark_contact", e.target, apiKey).then(
+      (result) => {
+        if (result.status === 200) {
+          setAlert(true);
+          setData({});
+          setAlarmMsg({
+            header: "Successfully Sent!",
+            url: "https://websiteurl.org/wp-content/uploads/2020/10/Red-Check-Mark-Animated-Gif.gif",
+            body: "Thanks for reaching out to us, We will get in touch with you shortly.",
+          });
+        } else {
           setAlert(true);
           setAlarmMsg({
             header: "Message Not Sent!",
             url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
-            body: " Please Try Later After some time.",
+            body: " Please check your connection and try again",
           });
-          console.log(error.text);
+          console.log(result.text);
         }
-      );
+      },
+      (error) => {
+        setAlert(true);
+        setAlarmMsg({
+          header: "Message Not Sent!",
+          url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
+          body: " Please Try Later After some time.",
+        });
+        console.log(error.text);
+      }
+    );
+    e.target.reset();
+    setData("");
   };
 
   const classes = useStyles();

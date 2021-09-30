@@ -8,14 +8,18 @@ import Footer from "../../components/layout/Footer";
 import { motion } from "framer-motion";
 import Layout from "../../components/layout/Layout";
 
+//env variables
+const cSpaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const cAccessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+
 //Contentful Blog Post path
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import FooterMenu from "../../components/layout/FooterMenu";
 
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: cSpaceId,
+  accessToken: cAccessToken,
 });
 
 export async function getStaticPaths() {
