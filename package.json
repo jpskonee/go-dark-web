@@ -25,6 +25,7 @@
     "@material-ui/icons": "^4.11.2",
     "@react-spring/parallax": "^9.2.3",
     "all": "^0.0.0",
+    "axios": "^0.22.0",
     "contentful": "^9.0.0",
     "dotenv": "^10.0.0",
     "emailjs-com": "^3.2.0",

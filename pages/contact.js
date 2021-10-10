@@ -12,11 +12,12 @@ import FooterMenu from "../components/layout/FooterMenu";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import emailjs from "emailjs-com";
 import AlertModal from "../components/shared/AlertModal";
+import axios from "axios";
 
 //env variable
 const apiKey = process.env.NEXT_PUBLIC_EMAILJS_API_KEY;
 const servId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const gSheet = process.env.NEXT_PUBLIC_G_SHEET;
+const api = process.env.NEXT_PUBLIC_BACKEND_API;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,7 +59,7 @@ const Contact = () => {
     message: "",
     date: new Date().toLocaleDateString(),
   });
-
+  const { name, email, subject, message } = data;
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -68,52 +69,65 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    //sending to google sheet
+    //sending to Go-dark mail
     try {
-      const res = await fetch(`${gSheet}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await axios
+        .post(
+          `${api}/api/mail`,
+          {
+            name,
+            email,
+            subject,
+            message,
+          },
+          {
+            headers: {
+              accept: "*/*",
+              origin: "http://localhost:3000",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((result) => {
+          if (result.status === 200) {
+            setAlert(true);
+            setAlarmMsg({
+              header: "Successfully Sent!",
+              url: "https://websiteurl.org/wp-content/uploads/2020/10/Red-Check-Mark-Animated-Gif.gif",
+              body: "Thanks for reaching out to us, We will get in touch with you shortly.",
+            });
+            e.target.reset();
+            setData({});
+          } else {
+            setAlert(true);
+            setAlarmMsg({
+              header: "message Not Sent!",
+              url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
+              body: " Please check your connection and try again",
+            });
+            console.log(result);
+          }
+        });
+      console.log("rrssss", result);
     } catch (error) {
-      console.log(error);
-    }
-
-    //Sending to email.js
-    await emailjs.sendForm(servId, "godark_contact", e.target, apiKey).then(
-      (result) => {
-        if (result.status === 200) {
-          setAlert(true);
-          setData({});
-          setAlarmMsg({
-            header: "Successfully Sent!",
-            url: "https://websiteurl.org/wp-content/uploads/2020/10/Red-Check-Mark-Animated-Gif.gif",
-            body: "Thanks for reaching out to us, We will get in touch with you shortly.",
-          });
-        } else {
-          setAlert(true);
-          setAlarmMsg({
-            header: "Message Not Sent!",
-            url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
-            body: " Please check your connection and try again",
-          });
-          console.log(result.text);
-        }
-      },
       (error) => {
         setAlert(true);
         setAlarmMsg({
-          header: "Message Not Sent!",
+          header: "message Not Sent!",
           url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
           body: " Please Try Later After some time.",
         });
         console.log(error.text);
-      }
-    );
-    e.target.reset();
-    setData("");
+      };
+      console.log(error);
+    }
+
+    // Sending to email.js
+    await emailjs.sendForm(servId, "godark_contact", e.target, apiKey);
+
+    // ///resetig form
+    // e.target.reset();
+    // setData({});
   };
 
   const classes = useStyles();
@@ -135,13 +149,21 @@ const Contact = () => {
         className="home"
         style={{ width: "100%", height: "100%", background: "#020205" }}
       >
-        <div className="contactMain">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "7rem",
+          }}
+        >
+          <GoogleMap />
+        </div>
+        {/* <div className="contactMain">
           <div className="contactInner">
             <div>
-              <GoogleMap />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="formMain">
           <Grid className="formInner" container>

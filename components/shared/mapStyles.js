@@ -1,4 +1,4 @@
-export default [
+const dark = [
   {
     featureType: "all",
     elementType: "labels",
@@ -75,15 +75,6 @@ export default [
     ],
   },
   {
-    featureType: "administrative.country",
-    elementType: "labels.text.fill",
-    stylers: [
-      {
-        color: "#e5c163",
-      },
-    ],
-  },
-  {
     featureType: "administrative.locality",
     elementType: "labels.text.fill",
     stylers: [
@@ -97,7 +88,7 @@ export default [
     elementType: "labels.text.fill",
     stylers: [
       {
-        color: "#e5c163",
+        color: "#707070",
       },
     ],
   },
@@ -142,10 +133,13 @@ export default [
     elementType: "geometry.fill",
     stylers: [
       {
-        color: "#e5c163",
+        color: "#be2026",
       },
       {
         lightness: "0",
+      },
+      {
+        visibility: "on",
       },
     ],
   },
@@ -163,7 +157,7 @@ export default [
     elementType: "labels.text.fill",
     stylers: [
       {
-        color: "#ffffff",
+        visibility: "off",
       },
     ],
   },
@@ -172,7 +166,10 @@ export default [
     elementType: "labels.text.stroke",
     stylers: [
       {
-        color: "#e5c163",
+        visibility: "off",
+      },
+      {
+        hue: "#ff000a",
       },
     ],
   },
@@ -237,6 +234,15 @@ export default [
     ],
   },
   {
+    featureType: "road.local",
+    elementType: "labels.text.stroke",
+    stylers: [
+      {
+        saturation: "-52",
+      },
+    ],
+  },
+  {
     featureType: "transit",
     elementType: "geometry",
     stylers: [
@@ -261,3 +267,5 @@ export default [
     ],
   },
 ];
+
+export default dark;

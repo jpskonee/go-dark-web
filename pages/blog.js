@@ -6,9 +6,11 @@ import Image from "next/image";
 import Head from "next/head";
 import { makeStyles } from "@material-ui/core/styles";
 
-//env
+//env variables
 const cSpaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const cAccessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+
+
 
 //Contentful Blog Post
 import { createClient } from "contentful";

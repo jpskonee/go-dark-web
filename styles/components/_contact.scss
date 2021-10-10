@@ -7,6 +7,9 @@
   width: 95%;
   position: relative;
 
+  @media screen and (min-width: 1700px) {
+    height: 800px;
+  }
   @media screen and (min-width: 600px) and (max-width: 1040px) {
     margin-top: 2rem;
     padding-bottom: 2rem;

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     width: "97vw",
 
     [theme.breakpoints.only("lg")]: {
-      height: "76vh",
+      height: "80vh",
       width: "86vw",
     },
   },
@@ -35,7 +35,7 @@ function Map() {
     <GoogleMap
       defaultZoom={13}
       defaultCenter={{ lat: 45.51223, lng: -122.658722 }}
-      // defaultOptions={{ styles: makeStyles }}
+      options={{ styles: mapStyles }}
     >
       {" "}
       <Marker
@@ -44,7 +44,7 @@ function Map() {
         position={{ lat: 45.51223, lng: -122.658722 }}
         icon={{
           url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Skull-Icon.svg/2048px-Skull-Icon.svg.png",
-          scaledSize: new window.google.maps.Size(70, 70),
+          scaledSize: new window.google.maps.Size(60, 60),
         }}
       />
       {detail && (
