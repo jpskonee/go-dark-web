@@ -83,7 +83,7 @@ const Contact = () => {
           {
             headers: {
               accept: "*/*",
-              origin: "https://www.go-dark.io/",
+              origin: "https://www.go-dark.io",
               "Content-Type": "application/json",
             },
           }
@@ -128,9 +128,9 @@ const Contact = () => {
     // Sending to email.js
     await emailjs.sendForm(servId, "godark_contact", e.target, apiKey);
 
-    // ///resetig form
-    // e.target.reset();
-    // setData({});
+    ///resetig form
+    e.target.reset();
+    setData({});
   };
 
   const classes = useStyles();
