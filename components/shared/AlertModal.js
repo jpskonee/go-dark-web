@@ -52,7 +52,11 @@ export default function SimpleModal({ setAlert, alertMsg }) {
   const body = (
     <div className={`${classes.paper} ${classes.mobiWid}`}>
       <h1 className={classes.header}>{alertMsg.header}</h1>
-      <img className={classes.img} src={alertMsg.url} alt="alert pic" />
+      {alertMsg.status === "pass" ? (
+        <img className={classes.img} src={`/check.gif`} alt="alert pic" />
+      ) : (
+        <img className={classes.img} src={`/fail.gif`} alt="alert pic" />
+      )}
       <p className={classes.body}> {alertMsg.body}</p>
     </div>
   );

@@ -83,7 +83,7 @@ const Contact = () => {
           {
             headers: {
               accept: "*/*",
-              origin: "http://localhost:3000",
+              origin: "https://www.go-dark.io/",
               "Content-Type": "application/json",
             },
           }
@@ -92,8 +92,9 @@ const Contact = () => {
           if (result.status === 200) {
             setAlert(true);
             setAlarmMsg({
+              status: "pass",
               header: "Successfully Sent!",
-              url: "https://websiteurl.org/wp-content/uploads/2020/10/Red-Check-Mark-Animated-Gif.gif",
+              url: "pass",
               body: "Thanks for reaching out to us, We will get in touch with you shortly.",
             });
             e.target.reset();
@@ -101,8 +102,9 @@ const Contact = () => {
           } else {
             setAlert(true);
             setAlarmMsg({
+              status: "fail",
               header: "message Not Sent!",
-              url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
+              url: "fail",
               body: " Please check your connection and try again",
             });
             console.log(result);
@@ -113,8 +115,9 @@ const Contact = () => {
       (error) => {
         setAlert(true);
         setAlarmMsg({
+          status: "fail",
           header: "message Not Sent!",
-          url: "https://cdn2.scratch.mit.edu/get_image/gallery/26181542_170x100.png",
+          url: "fail",
           body: " Please Try Later After some time.",
         });
         console.log(error.text);
